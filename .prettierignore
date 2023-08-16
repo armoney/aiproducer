@@ -8,6 +8,8 @@
 package-lock.json
 package.json
 jsconfig.json
+tailwind.config.js
+postcss.config.js
 
 # testing
 /coverage
