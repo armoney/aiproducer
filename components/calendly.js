@@ -1,5 +1,4 @@
 "use client";
-import Head from "next/head";
 import { useEffect } from "react";
 
 function Calendly() {
@@ -8,7 +7,7 @@ function Calendly() {
     const script = document.createElement("script");
     script.setAttribute(
       "src",
-      "https://assets.calendly.com/assets/external/widget.js",
+      "https://assets.calendly.com/assets/external/widget.js"
     );
     head.appendChild(script);
   }, []);

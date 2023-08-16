@@ -1,6 +1,7 @@
 "use client";
 import { useEffect } from "react";
-import Calendly from "../components/calendly";
+import Calendly from "../../components/calendly";
+import Payment from "../../components/payment"
 import Link from "next/link";
 import { gradient } from "../utils/Gradient";
 import "./page.css";
@@ -15,6 +16,7 @@ export default function Page() {
       <h1 className="text-3xl font-bold underline">
         Hello world!
       </h1>
+      <Payment />
       <canvas id="gradient-canvas" data-transition-in />
       <iframe
         title="vimeo-player"
