@@ -17,7 +17,7 @@ export default function Page() {
         Hello world!
       </h1>
       <Payment />
-      <canvas id="gradient-canvas" data-transition-in />
+      {/* <canvas id="gradient-canvas" data-transition-in /> */}
       <iframe
         title="vimeo-player"
         src="https://player.vimeo.com/video/828795162?h=0fc5665123"
