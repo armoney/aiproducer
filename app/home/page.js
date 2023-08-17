@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Calendly from "../../components/calendly";
 import Payment from "../../components/payment"
 import Link from "next/link";
-import { gradient } from "../utils/Gradient";
+import { gradient } from "../../components/Gradient";
 import "./page.css";
 
 export default function Page() {

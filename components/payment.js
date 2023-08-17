@@ -1,7 +1,9 @@
 import Script from "next/script";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 function Payment() {
+  const router = useRouter();
   useEffect(() => {
     const stripe = Stripe(
       "pk_test_51NfAD6GBN3j0TBw6S1x23sUkCS0zhNyaIeAuWIx0XL0xUvfXgzglVxxpjmjmYgubeg5zFUFcYpgErySb1sq4vCBn00vfni8zTI",
@@ -17,12 +19,26 @@ function Payment() {
       const response = await fetch("/api/stripe", {
         method: "POST",
       });
-      console.log("there there there");
 
       const { clientSecret } = await response.json();
 
+      // Example `onComplete` callback
+      const handleComplete = function () {
+        // Unmount Checkout
+        checkout.unmount();
+        console.log("what's up what's up?");
+
+        // Retrieve details from server (which loads Checkout Session)
+        // const details = await retrievePurchaseDetails();
+
+        // Show custom purchase summary
+        router.push("/confirmation");
+        // showPurchaseSummary(details);
+      };
+
       const checkout = await stripe.initEmbeddedCheckout({
         clientSecret,
+        onComplete: handleComplete,
       });
 
       // Mount Checkout
