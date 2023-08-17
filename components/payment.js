@@ -5,12 +5,9 @@ import { useRouter } from "next/navigation";
 function Payment() {
   const router = useRouter();
   useEffect(() => {
-    const stripe = Stripe(
-      "pk_test_51NfAD6GBN3j0TBw6S1x23sUkCS0zhNyaIeAuWIx0XL0xUvfXgzglVxxpjmjmYgubeg5zFUFcYpgErySb1sq4vCBn00vfni8zTI",
-      {
-        betas: ["embedded_checkout_beta_1"],
-      }
-    );
+    const stripe = Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY, {
+      betas: ["embedded_checkout_beta_1"],
+    });
 
     initialize();
 
@@ -26,7 +23,6 @@ function Payment() {
       const handleComplete = function () {
         // Unmount Checkout
         checkout.unmount();
-        console.log("what's up what's up?");
 
         // Retrieve details from server (which loads Checkout Session)
         // const details = await retrievePurchaseDetails();

@@ -1,10 +1,7 @@
 // Initialize stripe-node with beta-header
-const stripe = require("stripe")(
-  "sk_test_51NfAD6GBN3j0TBw6TqZe6oB4gwvQ3wBWCHebw0c3uVeNRx7dSWtuANuELwp2K3qnRTKBVEbhczMQToe4djLpYJqx00CBq2bVZn",
-  {
-    apiVersion: "2022-11-15; embedded_checkout_beta=v1",
-  }
-);
+const stripe = require("stripe")(process.env.STRIPE_API_KEY, {
+  apiVersion: "2022-11-15; embedded_checkout_beta=v1",
+});
 
 const getCheckoutSession = async function (req, res) {
   const session = await stripe.checkout.sessions.create({
