@@ -13,7 +13,7 @@ function Payment() {
 
     // Fetches a session and captures the client secret
     async function initialize() {
-      const response = await fetch("/api/stripe", {
+      const response = await fetch("/stripe", {
         method: "POST",
       });
 
