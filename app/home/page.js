@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Payment from "../components/payment"
+import Process from "../components/process";
 import Link from "next/link";
 // import { gradient } from "../../components/Gradient";
 import "./page.css";
@@ -167,6 +168,8 @@ export default function Page() {
           />
         </div>
       </div>
+
+      <Process />
 
       <div className="w-full h-64 flex items-center justify-center lg:h-144">
         <div className="w-full h-full" id="welcome-video">
