@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Script src="https://js.stripe.com/v3/" />
+      {/* <Script src="https://js.stripe.com/v3/" /> */}
       <body className={inter.className}>{children}</body>
     </html>
   );

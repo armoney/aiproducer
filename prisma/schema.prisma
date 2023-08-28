@@ -1,0 +1,49 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model User {
+  id          Int          @id @default(autoincrement())
+  name        String?
+  email       String       @unique
+  createdAt   DateTime     @default(now()) @map(name: "created_at")
+  updatedAt   DateTime     @updatedAt @map(name: "updated_at")
+  role        Role         @default(USER)
+  jobProfiles JobProfile[]
+
+  @@map(name: "users")
+}
+
+model JobProfile {
+  id                         Int     @id @default(autoincrement())
+  user                       User?   @relation(references: [id], fields: [userId])
+  userId                     Int?    @unique
+  websiteLink                String? @db.VarChar(500)
+  portfolioLink              String? @db.VarChar(500)
+  nameMainRole               String? @db.VarChar(100)
+  timeWorked                 Json?
+  workType                   String? @db.VarChar(500)
+  industryName               String? @db.VarChar(100)
+  holisticAccomplishments    String? @db.VarChar(500)
+  bestAttributes             String?
+  techSkills                 String? @db.VarChar(500)
+  softSkills                 String? @db.VarChar(500)
+  jobSpecificAccomplishments String? @db.VarChar(1000)
+  principles                 String? @db.VarChar(500)
+  music                      String? @db.VarChar(500)
+  otherMedia                 String? @db.VarChar(500)
+  hobbies                    String? @db.VarChar(500)
+}
+
+enum Role {
+  USER
+  ADMIN
+}
