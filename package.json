@@ -2,7 +2,6 @@
   "name": "aiproducer",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "npm run generate && next dev",
     "build": "npm run generate && npm run db-push && npm run db-seed && next build",
@@ -11,7 +10,7 @@
     "studio": "npx dotenv -e .env.local -- prisma studio",
     "generate": "npx dotenv -e .env.local -- prisma generate",
     "db-push": "npx dotenv -e .env.local -- prisma db push --force-reset",
-    "db-seed": "npx dotenv -e .env.local -- prisma db seed",
+    "db-seed": "npm run db-push && npx dotenv -e .env.local -- prisma db seed",
     "migrate:postgres": "npx dotenv -e .env.local -- prisma migrate deploy"
   },
   "prisma": {
@@ -23,7 +22,6 @@
     "@prisma/client": "^5.2.0",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.13",
-    "framer-motion": "^10.16.0",
     "next": "13.4.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
