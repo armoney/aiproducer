@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run generate && next dev",
-    "build": "npm run generate && npm run db-push && npm run db-seed && next build",
+    "dev": "next dev",
+    "build": "npm run lint && npm run generate && npm run db-push && npm run db-seed && next build",
     "start": "next start",
     "lint": "next lint",
     "studio": "npx dotenv -e .env.local -- prisma studio",
@@ -22,12 +22,15 @@
     "@prisma/client": "^5.2.0",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.13",
+    "framer-motion": "^10.16.2",
     "next": "13.4.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.4",
     "stripe": "^12.18.0"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.6",
     "autoprefixer": "^10.4.15",
     "dotenv-cli": "^7.3.0",
     "postcss": "^8.4.28",

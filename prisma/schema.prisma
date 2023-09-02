@@ -17,30 +17,31 @@ model User {
   createdAt   DateTime     @default(now()) @map(name: "created_at")
   updatedAt   DateTime     @updatedAt @map(name: "updated_at")
   role        Role         @default(USER)
+  phone       String?      @unique
   jobProfiles JobProfile[]
 
-  @@map(name: "users")
+  @@map(name: "user")
 }
 
 model JobProfile {
-  id                         Int     @id @default(autoincrement())
-  user                       User?   @relation(references: [id], fields: [userId])
-  userId                     Int?    @unique
-  websiteLink                String? @db.VarChar(500)
-  portfolioLink              String? @db.VarChar(500)
-  nameMainRole               String? @db.VarChar(100)
-  timeWorked                 Json?
-  workType                   String? @db.VarChar(500)
-  industryName               String? @db.VarChar(100)
-  holisticAccomplishments    String? @db.VarChar(500)
-  bestAttributes             String?
-  techSkills                 String? @db.VarChar(500)
-  softSkills                 String? @db.VarChar(500)
-  jobSpecificAccomplishments String? @db.VarChar(1000)
-  principles                 String? @db.VarChar(500)
-  music                      String? @db.VarChar(500)
-  otherMedia                 String? @db.VarChar(500)
-  hobbies                    String? @db.VarChar(500)
+  id               Int     @id @default(autoincrement())
+  user             User?   @relation(references: [id], fields: [userId])
+  userId           Int?    @unique
+  website          String? @db.VarChar(500)
+  portfolio        String? @db.VarChar(500)
+  mainRole         String? @db.VarChar(100)
+  yearsWorked      String?
+  serviceOrProduct String? @db.VarChar(500)
+  industryName     String? @db.VarChar(100)
+  accomplishments  String? @db.VarChar(500)
+  attributes       String?
+  techSkills       String? @db.VarChar(500)
+  softSkills       String? @db.VarChar(500)
+  workExperience   String? @db.VarChar(1000)
+  principles       String? @db.VarChar(500)
+  music            String? @db.VarChar(500)
+  otherMedia       String? @db.VarChar(500)
+  hobbies          String? @db.VarChar(500)
 }
 
 enum Role {
