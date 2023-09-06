@@ -19,6 +19,8 @@ export async function POST(request) {
       return new NextResponse(
         JSON.stringify({
           message: `User with ${error.meta.target[0]} already exists`,
+          status: 409,
+          name: error.meta.target[0],
         }),
         { status: 409 }
       );
