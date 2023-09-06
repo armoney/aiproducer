@@ -4,8 +4,8 @@ const prisma = new PrismaClient();
 const userData = [
   {
     name: "Armon Arcuri",
-    email: "armonsf+1@gmail.com",
-    phone: "5555555556",
+    email: "armonsf+0000@gmail.com",
+    phone: "5555550000",
     jobProfiles: {
       create: [
         {
@@ -17,7 +17,7 @@ const userData = [
           industryName: "Tech",
           accomplishments:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a tellus eu lorem tempor elementum vitae ac turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas feugiat id mauris eu euismod. Donec mattis velit nec libero pharetra, vitae commodo urna luctus. In ullamcorper viverra lobortis. In sit amet elementum dui, in sollicitudin ipsum. Cras tincidunt mi nisl, sit amet pellentesque risus fringilla quis. In sit amet tempus elit.",
-          attributes: "Calm, Passionate",
+          attributes: "calm,passionate",
           softSkills:
             "Curabitur metus urna, aliquet in condimentum et, placerat ac lectus.",
           techSkills: "Javascript, React, NodeJS",
@@ -34,8 +34,8 @@ const userData = [
   },
   {
     name: "Josh Murphy",
-    email: "armon1984@gmail.com",
-    phone: "5555555555",
+    email: "armon1984+0000@gmail.com",
+    phone: "5555550000",
     jobProfiles: {
       create: [
         {
@@ -47,7 +47,7 @@ const userData = [
           industryName: "Media",
           accomplishments:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a tellus eu lorem tempor elementum vitae ac turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas feugiat id mauris eu euismod. Donec mattis velit nec libero pharetra, vitae commodo urna luctus. In ullamcorper viverra lobortis. In sit amet elementum dui, in sollicitudin ipsum. Cras tincidunt mi nisl, sit amet pellentesque risus fringilla quis. In sit amet tempus elit.",
-          attributes: "Calm, Passionate",
+          attributes: "calm,passionate",
           softSkills:
             "Curabitur metus urna, aliquet in condimentum et, placerat ac lectus.",
           techSkills: "Adobe Photoshop",
