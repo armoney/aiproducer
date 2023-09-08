@@ -1,9 +1,11 @@
 "use client";
 import { useEffect } from "react";
 import Select from "react-select";
+import makeAnimated from "react-select/animated";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { string, array, z } from "zod";
+import clsx from "clsx";
 import {
   TextInput,
   PhoneInput,
@@ -13,6 +15,7 @@ import {
   TextAreaInput,
 } from "./form";
 
+const animatedComponents = makeAnimated();
 const attributeSchema = z.object({
   value: z.string(),
   label: z.string(),
@@ -215,11 +218,47 @@ const Questionnaire = () => {
                   name="attributes"
                   render={({ field }) => (
                     <Select
+                      classNames={{
+                        control: ({ isFocused }) =>
+                          clsx(
+                            "mt-1 border rounded-md shadow-sm",
+                            isFocused
+                              ? "border-indigo-300 ring ring-indigo-200 ring-opacity-50"
+                              : "border-gray-300 hover:border-gray-400"
+                          ),
+                        placeholder: () => "text-gray-500 pl-1 py-0.5",
+                        selectInput: () => "pl-1 py-0.5",
+                        valueContainer: () => "p-2 gap-1",
+                        multiValue: () =>
+                          "bg-gray-100 rounded items-center py-0.5 pl-2 pr-1 gap-1.5",
+                        multiValueLabel: () => "leading-6 py-0.5",
+                        multiValueRemove: () =>
+                          "border border-gray-200 bg-white hover:bg-red-50 hover:text-red-800 text-gray-500 hover:border-red-300 rounded-md",
+                        indicatorsContainer: () => "p-1 gap-1",
+                        clearIndicator: () =>
+                          "text-gray-500 p-1 rounded-md hover:bg-red-50 hover:text-red-800",
+                        indicatorSeparator: () => "bg-gray-300",
+                        menu: () =>
+                          "p-1 mt-2 border border-gray-200 bg-white rounded-lg",
+                        dropdownIndicator: () =>
+                          "p-1 hover:bg-gray-100 text-gray-500 rounded-md hover:text-black",
+                        groupHeadingStyles: () =>
+                          "ml-3 mt-2 mb-1 text-gray-500 text-sm",
+                        option: ({ isFocused, isSelected }) =>
+                          clsx(
+                            "hover:cursor-pointer px-3 py-2 rounded",
+                            isFocused && "bg-gray-100 active:bg-gray-200",
+                            isSelected &&
+                              "after:content-['✔'] after:ml-2 after:text-green-500 text-gray-500"
+                          ),
+                      }}
                       closeMenuOnSelect={false}
                       options={attributeOptions}
                       {...field}
                       id="attributes"
+                      components={animatedComponents}
                       isMulti
+                      unstyled
                     />
                   )}
                 />
@@ -276,10 +315,10 @@ const Questionnaire = () => {
                   className="mt-1 block w-full"
                 />
               </label> */}
-              <div className="block">
+              <div className="block mt-5 mb-5">
                 <button
                   type="submit"
-                  className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded"
+                  className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded w-full"
                 >
                   Submit
                 </button>

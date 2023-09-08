@@ -3,7 +3,7 @@ import React from "react";
 const CheckboxInput = React.forwardRef(({ onChange, id, name, label }, ref) => (
   <label htmlFor={id} className="inline-flex items-center">
     <input
-      className="form-checkbox"
+      className="form-checkbox hover:border-gray-400"
       name={name}
       id={id}
       type="checkbox"
