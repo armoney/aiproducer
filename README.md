@@ -1,9 +1,12 @@
-WORK IN PROGRESS
+## WORK IN PROGRESS
 
 IDEA: Bootstrap a video resume business. 
+
 HAS:  landing page, questionnaire form, stripe embedded checkout, Calendly widget
+
 NEEDS:  
   MVP: checkout success page. 
+  
   Strech goals: authentication and dashboard with job profile, video hosting for viewing finished product
 
 
