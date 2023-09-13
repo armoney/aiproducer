@@ -5,3 +5,4 @@ export { default as UrlInput } from "./urlInput";
 export { default as NumberInput } from "./numberInput";
 export { default as TextAreaInput } from "./textAreaInput";
 export { default as CheckboxInput } from "./checkboxInput";
+export { default as ErrorMessage } from "./errorMessage";

@@ -1,7 +1,8 @@
 import React, { forwardRef } from "react";
+import ErrorMessage from "./errorMessage";
 
 const UrlInput = forwardRef(function UrlInput(
-  { onChange, id, name, label },
+  { onChange, id, name, label, errorMessage },
   ref
 ) {
   return (
@@ -16,6 +17,7 @@ const UrlInput = forwardRef(function UrlInput(
         onChange={onChange}
         ref={ref}
       />
+      <ErrorMessage message={errorMessage} />
     </label>
   );
 });
