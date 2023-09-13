@@ -18,7 +18,7 @@ export async function POST(request) {
     if (error.code === "P2002") {
       return new NextResponse(
         JSON.stringify({
-          message: `User with ${error.meta.target[0]} already exists`,
+          message: `User with this ${error.meta.target[0]} already exists`,
           status: 409,
           name: error.meta.target[0],
         }),

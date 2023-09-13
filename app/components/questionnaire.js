@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import { useForm, Controller } from "react-hook-form";
@@ -13,7 +13,10 @@ import {
   UrlInput,
   NumberInput,
   TextAreaInput,
+  ErrorMessage,
 } from "./form";
+import Spinner from "./spinner";
+import { useRouter } from "next/navigation";
 
 const animatedComponents = makeAnimated();
 const attributeSchema = z.object({
@@ -48,6 +51,9 @@ const schema = z.object({
 });
 
 const Questionnaire = () => {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
   const { register, handleSubmit, setError, setValue, control, formState } =
     useForm({
       resolver: zodResolver(schema),
@@ -74,7 +80,9 @@ const Questionnaire = () => {
     { value: "analytical", label: "Analytical" },
   ];
 
-  const submitForm = async (formValues) => {
+  const submitForm = async (formValues, e) => {
+    // const submitEl = e.target.elements.submit;
+    setLoading(true);
     const user = (({ name, email, phone }) => ({ name, email, phone }))(
       formValues
     );
@@ -128,14 +136,18 @@ const Questionnaire = () => {
         body: JSON.stringify(body),
       });
       const data = await res.json();
+      console.log("data: " + JSON.stringify(data));
       if (data.status === 409) {
         setError(data.name, { type: "manual", message: data.message });
         // TODO: needs to scroll up to the top of page
+      } else if (data.id) {
+        debugger;
+        router.push("/checkout", { jobProfileId: data.id });
       }
-      console.log("data: " + JSON.stringify(data));
     } catch (error) {
       console.error(error);
     }
+    setLoading(false);
   };
 
   return (
@@ -143,41 +155,43 @@ const Questionnaire = () => {
       <div className="max-w-xl mx-auto py-12 md:max-w-4xl">
         <h2 className="text-2xl font-bold">Questionnaire</h2>
         <p className="mt-2 text-lg text-gray-500">Answer as much as you can</p>
-        <form novalidate onSubmit={handleSubmit(submitForm)}>
+        <form onSubmit={handleSubmit(submitForm)}>
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
             <div className="grid grid-cols-1 gap-6">
               {/* <label htmlFor="resume" className="block">
                 <span className="text-gray-700">Upload Your Resume</span>
                 <input type="file" id="resume" className="mt-1 block w-full" />
               </label> */}
-              <TextInput id="name" label="Full Name" {...register("name")} />
-              {errors.name?.message && (
-                <div style={{ color: "red" }}>{errors.name?.message}</div>
-              )}
-              <EmailInput id="email" label="Email" {...register("email")} />
-              {errors.email?.message && (
-                <div style={{ color: "red" }}>{errors.email?.message}</div>
-              )}
-              <PhoneInput id="phone" label="Phone" {...register("phone")} />
-              {errors.phone?.message && (
-                <div style={{ color: "red" }}>{errors.phone?.message}</div>
-              )}
+              <TextInput
+                id="name"
+                label="Full Name"
+                errorMessage={errors.name?.message}
+                {...register("name")}
+              />
+              <EmailInput
+                id="email"
+                label="Email"
+                errorMessage={errors.email?.message}
+                {...register("email")}
+              />
+              <PhoneInput
+                id="phone"
+                label="Phone"
+                errorMessage={errors.phone?.message}
+                {...register("phone")}
+              />
               <UrlInput
                 id="website"
                 label="Website Link"
+                errorMessage={errors.website?.message}
                 {...register("website")}
               />
-              {errors.website?.message && (
-                <div style={{ color: "red" }}>{errors.website?.message}</div>
-              )}
               <UrlInput
                 id="portfolio"
                 label="Online Portfolio Link (if applicable)"
+                errorMessage={errors.portfolio?.message}
                 {...register("portfolio")}
               />
-              {errors.portfolio?.message && (
-                <div style={{ color: "red" }}>{errors.portfolio?.message}</div>
-              )}
               <TextInput
                 id="mainRole"
                 label="What's the name of the main role you're known for or
@@ -318,10 +332,19 @@ const Questionnaire = () => {
               <div className="block mt-5 mb-5">
                 <button
                   type="submit"
-                  className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded w-full"
+                  id="submit"
+                  className="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded w-full"
                 >
                   Submit
+                  {loading && (
+                    <div className="ml-4">
+                      <Spinner />
+                    </div>
+                  )}
                 </button>
+                {!!Object.keys(errors).length && (
+                  <ErrorMessage message={"See errors above"} />
+                )}
               </div>
             </div>
           </div>
