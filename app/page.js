@@ -8,6 +8,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import SeeV_logo from "../public/logo.png";
 import Remote_person_lg from "../public/SeeV_LandingPage_8-min.png";
+import Remote_person_md from "../public/SeeV_LandingPage_9-min.jpeg";
 
 const navigation = [
   { name: "Product", href: "#steps" },
@@ -183,7 +184,11 @@ export default function Page() {
         src={Remote_person_lg}
         alt={"person working remote from mountain looking at city"}
       />
-
+      <Image
+        className="lg:hidden"
+        src={Remote_person_md}
+        alt={"person working remote at coffee shop"}
+      />
       {/* <div className="w-full h-64 flex items-center justify-center lg:h-144">
         <div className="w-full h-full" id="welcome-video">
           <iframe
