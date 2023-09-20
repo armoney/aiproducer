@@ -9,7 +9,8 @@ NEEDS:
   
   Strech goals: authentication and dashboard with job profile, video hosting for viewing finished product
 
-
+DEV: [https://aiproducer.vercel.app](https://aiproducer.vercel.app)
+PROD: [www.seev.work](www.seev.work)
 
 ## Getting Started
 
