@@ -1,14 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
-import Payment from "../components/payment";
 import Process from "../components/process";
-import Link from "next/link";
 // import { gradient } from "../../components/Gradient";
 import "./page.css";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import SeeV_logo from "../../public/logo.png";
+import Remote_person from "../../public/SeeV_LandingPage_8.png";
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -78,7 +77,7 @@ export default function Page() {
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
-                <img
+                <Image
                   className="h-8 w-auto"
                   src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                   alt=""
@@ -184,8 +183,12 @@ export default function Page() {
       </div>
 
       <Process />
+      <Image
+        src={Remote_person}
+        alt={"person working remote from mountain looking at city"}
+      />
 
-      <div className="w-full h-64 flex items-center justify-center lg:h-144">
+      {/* <div className="w-full h-64 flex items-center justify-center lg:h-144">
         <div className="w-full h-full" id="welcome-video">
           <iframe
             title="vimeo-player"
@@ -194,15 +197,9 @@ export default function Page() {
             height="100%"
           ></iframe>
         </div>
-      </div>
+      </div> */}
 
       {/* <canvas className="h-screen w-1/2" id="gradient-canvas" data-transition-in /> */}
-
-      <Payment />
-
-      <Link href="/producer" prefetch={false}>
-        Create video
-      </Link>
     </div>
   );
 }

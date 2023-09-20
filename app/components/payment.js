@@ -1,10 +1,13 @@
 "use client";
 import Script from "next/script";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, memo } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
-function Payment() {
+const Payment = memo(function Payment() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const jpid = searchParams.get("jpid");
+
   useEffect(() => {
     const stripe = Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY, {
       betas: ["embedded_checkout_beta_1"],
@@ -14,34 +17,32 @@ function Payment() {
 
     // Fetches a session and captures the client secret
     async function initialize() {
-      const response = await fetch("/stripe", {
+      const response = await fetch(`/api/stripe?jpid=${jpid}`, {
         method: "POST",
       });
 
       const { clientSecret } = await response.json();
 
       // Example `onComplete` callback
-      const handleComplete = function () {
-        // Unmount Checkout
-        checkout.unmount();
+      // const handleComplete = function () {
+      //   // Unmount Checkout
+      //   checkout.unmount();
 
-        // Retrieve details from server (which loads Checkout Session)
-        // const details = await retrievePurchaseDetails();
+      //   // Retrieve details from server (which loads Checkout Session)
+      //   // const details = await retrievePurchaseDetails();
 
-        // Show custom purchase summary
-        router.push("/confirmation");
-        // showPurchaseSummary(details);
-      };
-
+      //   // Show custom purchase summary
+      //   router.push("/confirmation");
+      //   // showPurchaseSummary(details);
+      // };
       const checkout = await stripe.initEmbeddedCheckout({
         clientSecret,
-        onComplete: handleComplete,
       });
 
       // Mount Checkout
       checkout.mount("#checkout");
     }
-  }, []);
+  }, [jpid]);
 
   return (
     <>
@@ -51,6 +52,6 @@ function Payment() {
       </div>
     </>
   );
-}
+});
 
 export default Payment;
