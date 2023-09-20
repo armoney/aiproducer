@@ -189,6 +189,7 @@ export default function Page() {
         src={Remote_person_md}
         alt={"person working remote at coffee shop"}
       />
+
       {/* <div className="w-full h-64 flex items-center justify-center lg:h-144">
         <div className="w-full h-full" id="welcome-video">
           <iframe
