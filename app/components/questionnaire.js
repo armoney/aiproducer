@@ -35,7 +35,7 @@ const schema = z.object({
     .url({ message: "URL should include https://" })
     .optional()
     .or(z.literal("")),
-  mainRole: string().min(1).optional().or(z.literal("")),
+  mainRole: string().min(1, { message: "Role name is required" }),
   yearsWorked: string().optional().or(z.literal("")),
   serviceOrProduct: string().optional().or(z.literal("")),
   industryName: string().optional().or(z.literal("")),
@@ -64,14 +64,6 @@ const Questionnaire = () => {
     console.log("errors", errors);
     console.log("formState", formState);
   });
-  const handleUrlFormat = (value) => {
-    let string = value;
-    if (string === "" || string === undefined) return;
-    if (!/^http[s]?:\/\//.test(string)) {
-      string = "http://" + string;
-    }
-    return string;
-  };
 
   const attributeOptions = [
     { value: "calm", label: "Calm" },
@@ -80,8 +72,11 @@ const Questionnaire = () => {
     { value: "analytical", label: "Analytical" },
   ];
 
-  const submitForm = async (formValues, e) => {
-    // const submitEl = e.target.elements.submit;
+  const submitForm = async (formValues) => {
+    const getJobProfileId = function (jobProfiles) {
+      return jobProfiles.filter((job) => job.mainRole === formValues.mainRole);
+    };
+
     setLoading(true);
     const user = (({ name, email, phone }) => ({ name, email, phone }))(
       formValues
@@ -94,7 +89,6 @@ const Questionnaire = () => {
       serviceOrProduct,
       industryName,
       accomplishments,
-      attributes,
       softSkills,
       techSkills,
       workExperience,
@@ -141,8 +135,8 @@ const Questionnaire = () => {
         setError(data.name, { type: "manual", message: data.message });
         // TODO: needs to scroll up to the top of page
       } else if (data.id) {
-        debugger;
-        router.push("/checkout", { jobProfileId: data.id });
+        const job = getJobProfileId(data.jobProfiles);
+        router.push(`/checkout?jpid=${job[0].id}`);
       }
     } catch (error) {
       console.error(error);
@@ -196,6 +190,7 @@ const Questionnaire = () => {
                 id="mainRole"
                 label="What's the name of the main role you're known for or
                   the position you're applying for?"
+                errorMessage={errors.mainRole?.message}
                 {...register("mainRole")}
               />
               <NumberInput
@@ -292,8 +287,8 @@ const Questionnaire = () => {
                 label="List your top 3 most relevant work experiences and top 2
                 accomplishments at each. This should include: the name of each
                 company, your title there, dates employed, overview of job
-                duties, top 2 accomplishemnts at each job including any
-                measureable analytics demonstrating growth/success."
+                duties, top 2 accomplishments at each job including any
+                measurable analytics demonstrating growth/success."
                 height={64}
                 {...register("workExperience")}
               />

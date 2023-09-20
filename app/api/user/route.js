@@ -7,6 +7,9 @@ export async function POST(request) {
 
     const user = await prisma.user.create({
       data: json,
+      include: {
+        jobProfiles: true,
+      },
     });
     return new NextResponse(JSON.stringify(user), {
       status: 201,
