@@ -1,22 +1,25 @@
-## WORK IN PROGRESS
+# See V
 
-IDEA: Bootstrap a video resume business. 
+**IDEA**: Bootstrap a video resume business.
 
-HAS:  landing page, questionnaire form, stripe embedded checkout, Calendly widget
+**HAS**: landing page, questionnaire form, stripe embedded checkout, Calendly widget
 
-NEEDS:  
-  MVP: checkout success page. 
-  
-  Strech goals: authentication and dashboard with job profile, video hosting for viewing finished product
+**NEEDS**: Checkout success page.
 
-DEV: [https://aiproducer.vercel.app](https://aiproducer.vercel.app)
+*Strech goals*: authentication and dashboard with job profile, video hosting for viewing finished product
 
-PROD: [https://seev.work](SeeV.work)
 
-TECHNOLOGIES:
-  Frontend: Javascript/React, NextJS, TailwindCSS, react-hook-form, react-select, CLSX
-  
-  Backend: NodeJS, Vercel host, PostgreSQL, Prisma ORM, Zod schema validation, Stripe
+**TECHNOLOGIES**: 
+
+* *Frontend*: Javascript/React, NextJS, TailwindCSS, react-hook-form, react-select, CLSX
+
+* *Backend*: NodeJS, Vercel host, PostgreSQL, Prisma ORM, Zod schema validation, Stripe
+
+## Environments
+
+**DEV**: https://aiproducer.vercel.app
+
+**PROD**: https://seev.work
 
 ## Getting Started
 
