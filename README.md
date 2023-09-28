@@ -15,6 +15,7 @@ PROD: [https://seev.work](SeeV.work)
 
 TECHNOLOGIES:
   Frontend: Javascript/React, NextJS, TailwindCSS, react-hook-form, react-select, CLSX
+  
   Backend: NodeJS, Vercel host, PostgreSQL, Prisma ORM, Zod schema validation, Stripe
 
 ## Getting Started
