@@ -2,12 +2,9 @@
 
 **IDEA**: Bootstrap a video resume business.
 
-**HAS**: landing page, questionnaire form, stripe embedded checkout, Calendly widget
-
-**NEEDS**: Checkout success page.
+**HAS**: landing page, questionnaire form, stripe embedded checkout, Checkout success with Calendly widget
 
 *Strech goals*: authentication and dashboard with job profile, video hosting for viewing finished product
-
 
 **TECHNOLOGIES**: 
 
