@@ -17,8 +17,8 @@ function Calendly() {
       <div id="schedule_form">
         <div
           className="calendly-inline-widget"
-          data-url="https://calendly.com/armonsf/30min"
-          style={{ minWidth: "320px", height: "660px" }}
+          data-url="https://calendly.com/seevpro/30min"
+          style={{ minWidth: "320px", height: "1000px" }}
         />
       </div>
     </div>
