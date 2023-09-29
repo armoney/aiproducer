@@ -7,20 +7,19 @@ const stripe = require("stripe")(process.env.STRIPE_API_KEY, {
 
 //GET session status
 export async function GET(req, res) {
-  const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
-  const customer = await stripe.customers.retrieve(session.customer);
-
+  const session = await stripe.checkout.sessions.retrieve(
+    req.nextUrl.searchParams.get("session_id")
+  );
   return NextResponse.json({
     status: session.status,
-    payment_status: sesion.payment_status,
-    customer_email: customer.email,
+    payment_status: session.payment_status,
+    customer_email: session.customer_details.email || null,
   });
 }
 
 export async function POST(req) {
   const jpid = req.nextUrl.searchParams.get("jpid");
   console.log("nextUrl: ", req.nextUrl);
-  // console.log("request ", req.nextUrl.searchParams.get("jpid"));
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
