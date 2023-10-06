@@ -24,25 +24,28 @@ model User {
 }
 
 model JobProfile {
-  id               Int     @id @default(autoincrement())
-  user             User?   @relation(references: [id], fields: [userId])
-  userId           Int?    @unique
-  website          String? @db.VarChar(500)
-  portfolio        String? @db.VarChar(500)
-  mainRole         String  @db.VarChar(100)
-  yearsWorked      String? @db.VarChar(100)
-  serviceOrProduct String? @db.VarChar(500)
-  industryName     String? @db.VarChar(100)
-  accomplishments  String? @db.VarChar(500)
-  attributes       String? @db.VarChar(100)
-  techSkills       String? @db.VarChar(500)
-  softSkills       String? @db.VarChar(500)
-  workExperience   String? @db.VarChar(1000)
-  principles       String? @db.VarChar(500)
-  music            String? @db.VarChar(500)
-  otherMedia       String? @db.VarChar(500)
-  hobbies          String? @db.VarChar(500)
-  paid             Boolean @default(false)
+  id               Int      @id @default(autoincrement())
+  user             User?    @relation(references: [id], fields: [userId])
+  userId           Int?     @unique
+  website          String?  @db.VarChar(500)
+  portfolio        String?  @db.VarChar(500)
+  mainRole         String   @db.VarChar(100)
+  yearsWorked      String?  @db.VarChar(100)
+  serviceOrProduct String?  @db.VarChar(500)
+  industryName     String?  @db.VarChar(100)
+  accomplishments  String?  @db.VarChar(500)
+  attributes       String?  @db.VarChar(100)
+  techSkills       String?  @db.VarChar(500)
+  softSkills       String?  @db.VarChar(500)
+  workExperience   String?  @db.VarChar(1000)
+  principles       String?  @db.VarChar(500)
+  music            String?  @db.VarChar(500)
+  otherMedia       String?  @db.VarChar(500)
+  hobbies          String?  @db.VarChar(500)
+  paid             Boolean  @default(false)
+  link             String?  @db.VarChar(5000)
+  createdAt        DateTime @default(now()) @map(name: "created_at")
+  updatedAt        DateTime @updatedAt @map(name: "updated_at")
 }
 
 enum Role {
