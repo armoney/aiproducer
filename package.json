@@ -4,15 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "build": "npm run lint && next build",
     "debug": "NODE_OPTIONS='--inspect' next dev",
-    "build": "npm run lint && npm run generate && npm run db-push && npm run db-seed && next build",
     "start": "next start",
     "lint": "next lint",
-    "studio": "npx dotenv -e .env.local -- prisma studio",
-    "generate": "npx dotenv -e .env.local -- prisma generate",
-    "db-push": "npx dotenv -e .env.local -- prisma db push --force-reset",
-    "db-seed": "npm run db-push && npx dotenv -e .env.local -- prisma db seed",
-    "migrate:postgres": "npx dotenv -e .env.local -- prisma migrate deploy"
+    "studio": "npx dotenv -e .env.development -- prisma studio",
+    "generate": "npx dotenv -e .env.development -- prisma generate",
+    "db-push": "npx dotenv -e .env.development -- prisma db push --force-reset",
+    "db-seed": "npm run db-push && npx dotenv -e .env.development -- prisma db seed",
+    "migrate:postgres": "npx dotenv -e .env.local -- prisma migrate deploy",
+    "migrate:dev": "npx dotenv -e .env.development -- prisma migrate dev",
+    "postinstall": "prisma generate"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
