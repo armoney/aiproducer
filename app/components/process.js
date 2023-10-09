@@ -13,8 +13,7 @@ const features = [
   },
   {
     name: "2. Interview",
-    description:
-      "Meet with a Hollywood producer to customize and create your video resume&apos;s aesthetic",
+    description: `Meet with a Hollywood producer to customize and create your video resume's aesthetic`,
     icon: ChatBubbleLeftRightIcon,
   },
   {

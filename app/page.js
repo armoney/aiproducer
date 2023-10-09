@@ -1,14 +1,20 @@
 "use client";
-import { useEffect, useState } from "react";
-import Process from "./components/process";
-// import { gradient } from "../../components/Gradient";
-import "./page.css";
-import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 import Image from "next/image";
 import SeeV_logo from "../public/logo.png";
 import Remote_person_lg from "../public/SeeV_LandingPage_8-min.png";
 import Remote_person_md from "../public/SeeV_LandingPage_9-min.jpeg";
+import Paul from "../public/paul.jpeg";
+import Armon from "../public/armon.jpeg";
+import Process from "./components/process";
+import Slider from "react-slick";
+import Testimonial from "./components/testimonial";
+// import { gradient } from "../../components/Gradient";
+import "./page.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Dialog } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
   { name: "Product", href: "#steps" },
@@ -20,7 +26,15 @@ export default function Page() {
   // useEffect(() => {
   //   gradient.initGradient("#gradient-canvas");
   // });
-
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    slidesToScroll: 1,
+  };
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -179,16 +193,56 @@ export default function Page() {
       </div>
 
       <Process id="steps" />
-      <Image
-        className="hidden lg:block"
-        src={Remote_person_lg}
-        alt={"person working remote from mountain looking at city"}
-      />
-      <Image
-        className="lg:hidden"
-        src={Remote_person_md}
-        alt={"person working remote at coffee shop"}
-      />
+      <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+        <div className="mx-auto max-w-screen-sm">
+          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+            Testimonials
+          </h2>
+          <p className="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
+            Check out what people have to say about their experience
+          </p>
+        </div>
+        <Slider {...sliderSettings}>
+          <div>
+            <Testimonial
+              imgSrc={Paul}
+              quote={`Working with Josh on my video resume was a delight
+                      and a super amazing experience! Josh's
+                      professionalism and ability to bring out the best in me
+                      during our filming was second to none. He really knows how
+                      to make you feel comfortable and direct you in a way to
+                      ensure that your video resume turns out as entertaining,
+                      compelling, and informative as humanly possible. I would
+                      100% suggest working with Josh on your video resume, and
+                      plan to come back to him myself when the time comes to
+                      film and create an updated one!`}
+              title={`Producer & Director`}
+              name={`Paul Plicz`}
+            />
+          </div>
+          <div>
+            <Testimonial
+              imgSrc={Armon}
+              quote={`Having little on camera experience I was hesitant, but Josh knows exactly what to say to you to make your performance professional! He has a great ability to find the core of your message all while getting your personality to shine. I'm truly impressed with the results and have already recieved compliments from hiring managers!`}
+              title={`Full-Stack Engineer`}
+              name={`Armon Arcuri`}
+            />
+          </div>
+        </Slider>
+      </div>
+
+      <div className="py-8 px-4 lg:py-16 lg:px-6">
+        <Image
+          className="hidden lg:block"
+          src={Remote_person_lg}
+          alt={"person working remote from mountain looking at city"}
+        />
+        <Image
+          className="lg:hidden"
+          src={Remote_person_md}
+          alt={"person working remote at coffee shop"}
+        />
+      </div>
 
       {/* <div className="w-full h-64 flex items-center justify-center lg:h-144">
         <div className="w-full h-full" id="welcome-video">
