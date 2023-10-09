@@ -1,14 +1,14 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Slider from "react-slick";
+import Process from "./components/process";
+import Testimonial from "./components/testimonial";
 import SeeV_logo from "../public/logo.png";
 import Remote_person_lg from "../public/SeeV_LandingPage_8-min.png";
 import Remote_person_md from "../public/SeeV_LandingPage_9-min.jpeg";
 import Paul from "../public/paul.jpeg";
 import Armon from "../public/armon.jpeg";
-import Process from "./components/process";
-import Slider from "react-slick";
-import Testimonial from "./components/testimonial";
 // import { gradient } from "../../components/Gradient";
 import "./page.css";
 import "slick-carousel/slick/slick.css";
@@ -198,7 +198,7 @@ export default function Page() {
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
             Testimonials
           </h2>
-          <p className="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
+          <p className="mb-4 font-light text-gray-500 lg:mb-8 sm:text-xl dark:text-gray-400">
             Check out what people have to say about their experience
           </p>
         </div>
@@ -226,6 +226,8 @@ export default function Page() {
               quote={`Having little on camera experience I was hesitant, but Josh knows exactly what to say to you to make your performance professional! He has a great ability to find the core of your message all while getting your personality to shine. I'm truly impressed with the results and have already recieved compliments from hiring managers!`}
               title={`Full-Stack Engineer`}
               name={`Armon Arcuri`}
+              video={true}
+              showModal={() => setShowModal(true)}
             />
           </div>
         </Slider>
