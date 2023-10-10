@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { createPortal } from "react-dom";
 import Image from "next/image";
-import ModalContent from "./modalContent";
+import Modal from "../components/modal";
 
 const Testimonial = ({ imgSrc, quote, name, title }) => {
   const [showModal, setShowModal] = useState(false);
@@ -63,11 +62,9 @@ const Testimonial = ({ imgSrc, quote, name, title }) => {
                 Watch video resume <span aria-hidden="true">→</span>
               </button>
             </div>
-            {showModal &&
-              createPortal(
-                <ModalContent onClose={() => setShowModal(false)} />,
-                document.body
-              )}
+            <Modal isOpen={showModal} closeIt={() => setShowModal(false)}>
+              Hi
+            </Modal>
           </figcaption>
         </figure>
       </div>
