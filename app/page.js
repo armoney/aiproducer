@@ -4,6 +4,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import Process from "./components/process";
 import Testimonial from "./components/testimonial";
+import Modal from "./components/modal";
 import SeeV_logo from "../public/logo.png";
 import Remote_person_lg from "../public/SeeV_LandingPage_8-min.png";
 import Remote_person_md from "../public/SeeV_LandingPage_9-min.jpeg";
@@ -206,6 +207,7 @@ export default function Page() {
           <div>
             <Testimonial
               imgSrc={Paul}
+              videoSrc={`https://player.vimeo.com/video/872719438`}
               quote={`Working with Josh on my video resume was a delight
                       and a super amazing experience! Josh's
                       professionalism and ability to bring out the best in me
@@ -223,11 +225,10 @@ export default function Page() {
           <div>
             <Testimonial
               imgSrc={Armon}
+              videoSrc={`https://player.vimeo.com/video/869303726`}
               quote={`Having little on camera experience I was hesitant, but Josh knows exactly what to say to you to make your performance professional! He has a great ability to find the core of your message all while getting your personality to shine. I'm truly impressed with the results and have already recieved compliments from hiring managers!`}
               title={`Full-Stack Engineer`}
               name={`Armon Arcuri`}
-              video={true}
-              showModal={() => setShowModal(true)}
             />
           </div>
         </Slider>

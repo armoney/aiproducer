@@ -33,8 +33,8 @@ function Modal({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                <div className="mt-4">
+              <Dialog.Panel className="w-max h-max transform overflow-hidden rounded-2xl bg-white p-4 text-left align-middle shadow-xl transition-all">
+                <div className="flex justify-end">
                   <button
                     type="button"
                     className="-m-2.5 rounded-md p-2.5 text-gray-700"

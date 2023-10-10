@@ -2,8 +2,12 @@ import { useState } from "react";
 import Image from "next/image";
 import Modal from "../components/modal";
 
-const Testimonial = ({ imgSrc, quote, name, title }) => {
+const Testimonial = ({ imgSrc, videoSrc, quote, name, title }) => {
   const [showModal, setShowModal] = useState(false);
+
+  const videoWidth = window.innerWidth - 100;
+  const videoHeight = videoWidth * 0.6;
+
   return (
     <section className="relative isolate overflow-hidden bg-white px-6 py-8 sm:py-16 lg:px-8">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
@@ -46,25 +50,40 @@ const Testimonial = ({ imgSrc, quote, name, title }) => {
                 <circle cx="1" cy="1" r="1" />
               </svg>
               <div className="text-gray-600">{title}</div>
-              <svg
-                viewBox="0 0 2 2"
-                width="3"
-                height="3"
-                aria-hidden="true"
-                className="fill-gray-900"
-              >
-                <circle cx="1" cy="1" r="1" />
-              </svg>
-              <button
-                className="text-sm font-semibold leading-6 text-gray-900"
-                onClick={() => setShowModal(true)}
-              >
-                Watch video resume <span aria-hidden="true">→</span>
-              </button>
+              {videoSrc && (
+                <>
+                  <svg
+                    viewBox="0 0 2 2"
+                    width="3"
+                    height="3"
+                    aria-hidden="true"
+                    className="fill-gray-900"
+                  >
+                    <circle cx="1" cy="1" r="1" />
+                  </svg>
+
+                  <button
+                    className="text-sm font-semibold leading-6 text-gray-900"
+                    onClick={() => setShowModal(true)}
+                  >
+                    Watch video resume <span aria-hidden="true">→</span>
+                  </button>
+                </>
+              )}
             </div>
-            <Modal isOpen={showModal} closeIt={() => setShowModal(false)}>
-              Hi
-            </Modal>
+            {videoSrc && (
+              <Modal isOpen={showModal} closeIt={() => setShowModal(false)}>
+                <div className="" id="video-resume">
+                  <iframe
+                    src={videoSrc}
+                    width={videoWidth}
+                    height={videoHeight}
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    title={`${name} video resume`}
+                  ></iframe>
+                </div>
+              </Modal>
+            )}
           </figcaption>
         </figure>
       </div>
