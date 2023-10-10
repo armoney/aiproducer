@@ -1,10 +1,20 @@
-import { useState } from "react";
-import { createPortal } from "react-dom";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import ModalContent from "./modalContent";
+import Modal from "../components/modal";
 
-const Testimonial = ({ imgSrc, quote, name, title }) => {
+const Testimonial = ({ imgSrc, videoSrc, quote, name, title }) => {
   const [showModal, setShowModal] = useState(false);
+  const [videoWidth, setWidth] = useState(0);
+  const [videoHeight, setHeight] = useState(0);
+
+  const setDimensions = () => {
+    setWidth(window.innerWidth - 100);
+    setHeight((window.innerWidth - 100) * 0.6);
+  };
+
+  useEffect(() => {
+    setDimensions();
+  }, []);
   return (
     <section className="relative isolate overflow-hidden bg-white px-6 py-8 sm:py-16 lg:px-8">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
@@ -47,27 +57,40 @@ const Testimonial = ({ imgSrc, quote, name, title }) => {
                 <circle cx="1" cy="1" r="1" />
               </svg>
               <div className="text-gray-600">{title}</div>
-              <svg
-                viewBox="0 0 2 2"
-                width="3"
-                height="3"
-                aria-hidden="true"
-                className="fill-gray-900"
-              >
-                <circle cx="1" cy="1" r="1" />
-              </svg>
-              <button
-                className="text-sm font-semibold leading-6 text-gray-900"
-                onClick={() => setShowModal(true)}
-              >
-                Watch video resume <span aria-hidden="true">→</span>
-              </button>
-            </div>
-            {showModal &&
-              createPortal(
-                <ModalContent onClose={() => setShowModal(false)} />,
-                document.body
+              {videoSrc && (
+                <>
+                  <svg
+                    viewBox="0 0 2 2"
+                    width="3"
+                    height="3"
+                    aria-hidden="true"
+                    className="fill-gray-900"
+                  >
+                    <circle cx="1" cy="1" r="1" />
+                  </svg>
+
+                  <button
+                    className="text-sm font-semibold leading-6 text-gray-900"
+                    onClick={() => setShowModal(true)}
+                  >
+                    Watch video resume <span aria-hidden="true">→</span>
+                  </button>
+                </>
               )}
+            </div>
+            {videoSrc && (
+              <Modal isOpen={showModal} closeIt={() => setShowModal(false)}>
+                <div className="" id="video-resume">
+                  <iframe
+                    src={videoSrc}
+                    width={videoWidth}
+                    height={videoHeight}
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    title={`${name} video resume`}
+                  ></iframe>
+                </div>
+              </Modal>
+            )}
           </figcaption>
         </figure>
       </div>
