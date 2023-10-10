@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Modal from "../components/modal";
 
 const Testimonial = ({ imgSrc, videoSrc, quote, name, title }) => {
   const [showModal, setShowModal] = useState(false);
+  const [videoWidth, setWidth] = useState(0);
+  const [videoHeight, setHeight] = useState(0);
 
-  const videoWidth = window.innerWidth - 100;
-  const videoHeight = videoWidth * 0.6;
+  const setDimensions = () => {
+    setWidth(window.innerWidth - 100);
+    setHeight((window.innerWidth - 100) * 0.6);
+  };
 
+  useEffect(() => {
+    setDimensions();
+  }, []);
   return (
     <section className="relative isolate overflow-hidden bg-white px-6 py-8 sm:py-16 lg:px-8">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
