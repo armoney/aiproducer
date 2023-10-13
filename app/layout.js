@@ -2,7 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import { StrictMode } from "react";
-
+import { Navigation } from "./components/navigation";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {

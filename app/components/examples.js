@@ -36,7 +36,7 @@ export default function Examples() {
 
   const listItems = clients.map((person) => {
     const bg = clsx({ "bg-slate-100": selectedClient.id === person.id });
-    console.log("bg: ", bg);
+
     return (
       <li
         className="my-2"
@@ -68,7 +68,10 @@ export default function Examples() {
   });
 
   return (
-    <div className="py-32 px-6 mx-auto max-w-screen-xl lg:py-16 lg:px-8">
+    <div
+      id="examples"
+      className="py-32 px-6 mx-auto max-w-screen-xl lg:py-16 lg:px-8"
+    >
       <div className="mx-auto max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl lg:text-center">
         <h2 className="text-base font-semibold leading-7 text-indigo-600">
           Examples
