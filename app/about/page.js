@@ -10,7 +10,7 @@ const About = () => {
       img: JoshImg,
       title: "CEO",
       linkedIn: "https://www.linkedin.com/in/joshthemurph/",
-      desc: "Turpis lectus et amet elementum. Mi duis integer sed in vitae consequat. Nam vitae, in felis mi dui tempus. Porta at turpis eu odio. Et, sed duis in blandit bibendum accumsan. Purus viverra facilisi suspendisse quis est.",
+      desc: "Josh is a roll-up-your-sleeves Executive Producer with two decades of experience creating, developing, selling, writing, and producing top tier video and audio content for blue chip brands. He spearheaded the development and sale of 23 series, documentaries, specials, podcasts, and pilots to major media brands like Netflix, Paramount+, Warner Brothers Discovery, Facebook, NBCUniversal, ABC, Audible, and AETN. IP Josh and his talented teams developed has gone on to yield 500+ hours of brand-defining entertainment content.",
     },
     {
       id: 1,
@@ -18,7 +18,7 @@ const About = () => {
       img: ArmonImg,
       title: "CTO",
       linkedIn: "https://www.linkedin.com/in/armon-arcuri/",
-      desc: "I like turtles",
+      desc: "Armon is a full-time Full-Stack developer and part time outdoors enthusiast. He loves conversations with good espresso and dreams about a catch & cook trip in the Alaskan backcountry.",
     },
   ];
 
@@ -55,7 +55,7 @@ const About = () => {
     <div>
       <Navigation />
       <div className="max-w-2xl m-auto sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-7xl pt-48 px-8">
-        <ul className="grid gap-x-8 gap-y-20 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <ul className="pb-20 grid gap-x-8 gap-y-20 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
           <li className="max-w-2xl	md:col-span-2 lg:col-span-3">
             <h2 className="text-gray-900 text-3xl	font-bold	tracking-tight md:text-4xl">
               Our team

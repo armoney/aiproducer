@@ -9,10 +9,10 @@ import { usePathname } from "next/navigation";
 export const Navigation = () => {
   const pathname = usePathname();
   const homeNavigation = [
-    { name: "Process", href: "#process" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Examples", href: "#examples" },
-    { name: "About", href: "about" },
+    { name: "Process", href: "#process", sidebar: false },
+    { name: "Testimonials", href: "#testimonials", sidebar: false },
+    { name: "Examples", href: "#examples", sidebar: false },
+    { name: "About", href: "about", sidebar: true },
   ];
 
   const navigation = pathname === "/" ? homeNavigation : [];
@@ -81,15 +81,18 @@ export const Navigation = () => {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    {item.name}
-                  </a>
-                ))}
+                {navigation.map(
+                  (item) =>
+                    item.sidebar && (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      >
+                        {item.name}
+                      </a>
+                    )
+                )}
               </div>
               <div className="py-6">
                 <a
