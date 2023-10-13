@@ -21,7 +21,7 @@ const Testimonial = ({ imgSrc, videoSrc, quote, name, title }) => {
       <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
       <div className="mx-auto max-w-2xl lg:max-w-4xl">
         <svg
-          className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+          className="h-12 mx-auto mb-3 text-gray-400"
           viewBox="0 0 24 27"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@ const Testimonial = ({ imgSrc, videoSrc, quote, name, title }) => {
               <Image
                 className="h-10 w-10 rounded-full"
                 src={imgSrc}
-                alt="profile picture"
+                alt={`${name} profile picture`}
               />
             </div>
 

@@ -3,8 +3,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 import Process from "./components/process";
+import Examples from "./components/examples";
 import Testimonial from "./components/testimonial";
-import Modal from "./components/modal";
 import SeeV_logo from "../public/logo.png";
 import Remote_person_lg from "../public/SeeV_LandingPage_8-min.png";
 import Remote_person_md from "../public/SeeV_LandingPage_9-min.jpeg";
@@ -196,10 +196,10 @@ export default function Page() {
       <Process id="steps" />
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-sm">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
             Testimonials
           </h2>
-          <p className="mb-4 font-light text-gray-500 lg:mb-8 sm:text-xl dark:text-gray-400">
+          <p className="mb-4 font-light text-gray-500 lg:mb-8 sm:text-xl">
             Check out what people have to say about their experience
           </p>
         </div>
@@ -233,6 +233,8 @@ export default function Page() {
           </div>
         </Slider>
       </div>
+
+      <Examples />
 
       <div className="py-8 px-4 lg:py-16 lg:px-6">
         <Image
