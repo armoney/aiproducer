@@ -28,7 +28,7 @@ export async function POST(req) {
           product_data: {
             name: "Video Resume",
           },
-          unit_amount: 30000,
+          unit_amount: 100,
         },
         quantity: 1,
       },
