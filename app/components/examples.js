@@ -73,7 +73,7 @@ export default function Examples() {
       className="py-32 px-6 mx-auto max-w-screen-xl lg:py-16 lg:px-8"
     >
       <div className="mx-auto max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl lg:text-center">
-        <h2 className="text-base font-semibold leading-7 text-indigo-600">
+        <h2 className="text-base font-semibold leading-7 text-primary-500">
           Examples
         </h2>
         <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -83,7 +83,7 @@ export default function Examples() {
       <div className="mt-2 lg:flex lg:mt-16">
         <div className="mx-auto  md:max-w-2xl lg:w-1/2">
           <ul className="py-4 md:px-2">{listItems}</ul>
-          {/* <a className="p-4 text-indigo-600 text-sm text-">
+          {/* <a className="p-4 text-primary-500 text-sm text-">
             View other examples <span aria-hidden="true">→</span>
           </a> */}
         </div>
