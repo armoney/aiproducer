@@ -38,7 +38,7 @@ export default function Page() {
         <div className="mx-auto max-w-3xl px-6 py-16 pt-14 sm:py-38  lg:px-8 lg:py-48">
           <div className="flex justify-center">
             <CheckCircleIcon
-              className="h-12 w-12 sm:h-16 sm:w-16 text-indigo-600"
+              className="h-12 w-12 sm:h-16 sm:w-16 text-primary-500"
               aria-hidden="true"
             />
           </div>
@@ -62,7 +62,7 @@ export default function Page() {
                 High Speed Internet (You&apos;ll need a high speed internet
                 connection of at least 50mbps. Test your speed
                 <Link
-                  className="text-indigo-600"
+                  className="text-primary-500"
                   target="_blank"
                   href="https://fast.com"
                 >

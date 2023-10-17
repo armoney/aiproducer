@@ -26,7 +26,7 @@ export async function POST(req) {
         price_data: {
           currency: "usd",
           product_data: {
-            name: "Video Resume",
+            name: "SeeV Video",
           },
           unit_amount: 100,
         },

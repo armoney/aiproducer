@@ -232,7 +232,7 @@ const Questionnaire = () => {
                           clsx(
                             "mt-1 border rounded-md shadow-sm",
                             isFocused
-                              ? "border-indigo-300 ring ring-indigo-200 ring-opacity-50"
+                              ? "border-primary-400 ring ring-primary-200 ring-opacity-50"
                               : "border-gray-300 hover:border-gray-400"
                           ),
                         placeholder: () => "text-gray-500 pl-1 py-0.5",
@@ -328,7 +328,7 @@ const Questionnaire = () => {
                 <button
                   type="submit"
                   id="submit"
-                  className="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded w-full"
+                  className="inline-flex items-center justify-center bg-primary-500 hover:bg-primary-400 text-white font-bold py-2 px-4 rounded w-full"
                 >
                   Submit
                   {loading && (
