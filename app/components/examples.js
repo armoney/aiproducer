@@ -1,7 +1,8 @@
-import PaulImg from "../../public/paul.jpeg";
 import { useState } from "react";
+import PaulImg from "../../public/paul.jpeg";
 import ArmonImg from "../../public/armon.jpeg";
 import JoshImg from "../../public/josh.jpeg";
+import HakimImg from "../../public/hakim.jpeg";
 import Image from "next/image";
 import clsx from "clsx";
 
@@ -27,6 +28,13 @@ export default function Examples() {
       img: ArmonImg,
       videoSrc: `https://player.vimeo.com/video/869303726`,
       id: 2,
+    },
+    {
+      name: "Hakim Abdullah",
+      title: "Senior iOS Engineer",
+      img: HakimImg,
+      videoSrc: `https://player.vimeo.com/video/877390593`,
+      id: 3,
     },
   ];
   const [selectedClient, setSelectedClient] = useState(clients[0]);

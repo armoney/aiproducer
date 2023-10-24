@@ -44,40 +44,33 @@ export default function Page() {
             }}
           />
         </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-38 lg:py-48">
-          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              Announcing our next round of funding.{" "}
-              <a href="#" className="font-semibold text-primary-500">
-                <span className="absolute inset-0" aria-hidden="true" />
-                Read more <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </div>
-          <div className="text-center">
+        <div className="grid grid-cols-1 gap-x-12 gap-y-4 mx-auto max-w-3xl py-32 sm:gap-y-12 sm:py-38 lg:pt-56 lg:pb-36 xl:max-w-7xl xl:grid-cols-2 xl:gap-x-20">
+          <div className="text-center xl:text-left">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Elevate your resume
+              Video resumes reinvented
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Tired of wasting your time sending out dozens of resumes only to
-              hear crickets? Let SeeV help you stand out from the crowd with a
-              dynamic, custom video resume that showcases your experience in the
-              best ways possible.
+              Tired of wasting your time sending out ineffective paper
+              resumes? Boost your chances of landing interviews or new clients
+              by 250% with an amazing custom SeeV video resume that showcases
+              your experience, skills and personality in the best ways possible.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
               <a
                 href="/questionnaire"
                 className="rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
               >
                 Get started
               </a>
-              <a
-                href="#"
-                className="text-sm font-semibold leading-6 text-gray-900"
-              >
-                Watch Demo <span aria-hidden="true">→</span>
-              </a>
             </div>
+          </div>
+          <div className="max-w-full h-80 md:h-96">
+            <iframe
+              className="w-full h-full"
+              src={"https://player.vimeo.com/video/877191269"}
+              allow="autoplay; fullscreen; picture-in-picture"
+              title="SeeV commercial"
+            ></iframe>
           </div>
         </div>
         <div

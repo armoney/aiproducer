@@ -31,7 +31,7 @@ const features = [
 
 export default function Process({ id }) {
   return (
-    <div id={id} className="bg-white py-24 sm:py-32">
+    <div id={id} className="pt-16 pb-24 sm:pt-24 sm:pb-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-primary-500">
