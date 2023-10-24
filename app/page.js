@@ -44,7 +44,7 @@ export default function Page() {
             }}
           />
         </div>
-        <div className="grid grid-cols-1 gap-x-12 gap-y-4 mx-auto max-w-3xl py-32 sm:gap-y-12 sm:py-38 lg:pt-56 lg:pb-36 xl:max-w-7xl xl:grid-cols-2 xl:gap-x-20">
+        <div className="grid grid-cols-1 gap-x-12 gap-y-4 mx-auto max-w-3xl py-32 sm:gap-y-12 sm:py-38 md:py-48 md:gap-y-20 lg:pt-56 lg:pb-36 xl:max-w-7xl xl:grid-cols-2 xl:gap-x-20">
           <div className="text-center xl:text-left">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               Video resumes reinvented

@@ -78,7 +78,7 @@ export default function Examples() {
   return (
     <div
       id="examples"
-      className="py-32 px-6 mx-auto max-w-screen-xl lg:py-16 lg:px-8"
+      className="py-32 px-6 mx-auto max-w-screen-xl lg:pt-8 pb-16 lg:px-8"
     >
       <div className="mx-auto max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl lg:text-center">
         <h2 className="text-base font-semibold leading-7 text-primary-500">
