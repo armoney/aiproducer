@@ -1,7 +1,8 @@
-import PaulImg from "../../public/paul.jpeg";
 import { useState } from "react";
+import PaulImg from "../../public/paul.jpeg";
 import ArmonImg from "../../public/armon.jpeg";
 import JoshImg from "../../public/josh.jpeg";
+import HakimImg from "../../public/hakim.jpeg";
 import Image from "next/image";
 import clsx from "clsx";
 
@@ -27,6 +28,13 @@ export default function Examples() {
       img: ArmonImg,
       videoSrc: `https://player.vimeo.com/video/869303726`,
       id: 2,
+    },
+    {
+      name: "Hakim Abdullah",
+      title: "Senior iOS Engineer",
+      img: HakimImg,
+      videoSrc: `https://player.vimeo.com/video/877390593`,
+      id: 3,
     },
   ];
   const [selectedClient, setSelectedClient] = useState(clients[0]);
@@ -70,7 +78,7 @@ export default function Examples() {
   return (
     <div
       id="examples"
-      className="py-32 px-6 mx-auto max-w-screen-xl lg:py-16 lg:px-8"
+      className="py-32 px-6 mx-auto max-w-screen-xl lg:pt-8 pb-16 lg:px-8"
     >
       <div className="mx-auto max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl lg:text-center">
         <h2 className="text-base font-semibold leading-7 text-primary-500">

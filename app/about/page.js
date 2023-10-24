@@ -10,7 +10,7 @@ const About = () => {
       img: JoshImg,
       title: "CEO",
       linkedIn: "https://www.linkedin.com/in/joshthemurph/",
-      desc: "Josh is a roll-up-your-sleeves Executive Producer with two decades of experience creating, developing, selling, writing, and producing top tier video and audio content for blue chip brands. He spearheaded the development and sale of 23 series, documentaries, specials, podcasts, and pilots to major media brands like Netflix, Paramount+, Warner Brothers Discovery, Facebook, NBCUniversal, ABC, Audible, and AETN. IP Josh and his talented teams developed has gone on to yield 500+ hours of brand-defining entertainment content.",
+      desc: "Josh spent the better part of two decades working as a documentary series producer and creative executive and a major part of his work involved selling dozens of TV show ideas to networks like Paramount+, Netflix and Discovery Channel with short pitch tapes called “sizzles.” Along the way he realized that there were some time tested formulas that went into making successful sizzles and that these could be implemented across all kinds of videos to streamline story and present people and their businesses in the most flattering ways possible. Now, he’s excited to use these same skills to create SeeV video resumes to help turn job seekers into the stars of their job searches.",
     },
     {
       id: 1,
@@ -61,9 +61,13 @@ const About = () => {
               Our team
             </h2>
             <p className="mt-6 text-gray-600 text-lg leading-8">
-              We&apos;re a dynamic group of individuals who are passionate about
-              what we do and dedicated to delivering the best results for our
-              clients.
+              {`Unlike our competitors, our service is run by founders from both
+              tech AND entertainment - which is important because if it's one
+              thing Hollywood people know how to do is bring out your best on
+              camera. SeeV's videos utilize the time-tested rules used in
+              Hollywood documentary production that turn everyday people into
+              stars by maximizing their credibility, attractiveness, and
+              likability on camera.`}
             </p>
           </li>
           {cards}
