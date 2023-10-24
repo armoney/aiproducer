@@ -28,7 +28,7 @@ export async function POST(req) {
           product_data: {
             name: "SeeV Video",
           },
-          unit_amount: 100,
+          unit_amount: 49900,
         },
         quantity: 1,
       },
