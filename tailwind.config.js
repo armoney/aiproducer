@@ -6,6 +6,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    minWidth: {
+      '20': '20px',
+    },
     extend: {
       height: {
         144: "36rem",
