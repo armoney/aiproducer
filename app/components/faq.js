@@ -80,7 +80,7 @@ export default function Example() {
               <ChevronUpIcon
                 className={`${
                   open ? "rotate-180 transform" : ""
-                } h-5 w-5 min-w-max	text-primary-500`}
+                } h-5 w-5 min-w-20 text-primary-500`}
               />
             </Disclosure.Button>
             <Transition
