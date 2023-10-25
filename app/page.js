@@ -9,15 +9,12 @@ import Remote_person_lg from "../public/SeeV_LandingPage_8-min.png";
 import Remote_person_md from "../public/SeeV_LandingPage_9-min.jpeg";
 import Paul from "../public/paul.jpeg";
 import Armon from "../public/armon.jpeg";
-// import { gradient } from "../../components/Gradient";
+import Hakim from "../public/hakim.jpeg";
 import "./page.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Page() {
-  // useEffect(() => {
-  //   gradient.initGradient("#gradient-canvas");
-  // });
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -50,10 +47,10 @@ export default function Page() {
               Video resumes reinvented
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Tired of wasting your time sending out ineffective paper
-              resumes? Boost your chances of landing interviews or new clients
-              by 250% with an amazing custom SeeV video resume that showcases
-              your experience, skills and personality in the best ways possible.
+              Tired of wasting your time sending out ineffective paper resumes?
+              Boost your chances of landing interviews or new clients by 250%
+              with an amazing custom SeeV video resume that showcases your
+              experience, skills and personality in the best ways possible.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
               <a
@@ -103,6 +100,19 @@ export default function Page() {
         <Slider {...sliderSettings}>
           <div>
             <Testimonial
+              imgSrc={Hakim}
+              videoSrc={`https://player.vimeo.com/video/877390593`}
+              quote={`My video resume experience with SeeV was great. They sent me a
+                  thorough questionnaire covering not just my engineering skills but
+                  also my interests, family, and travel experiences. It's essential
+                  to understand the person beyond their resume. Video resumes give a
+                  real glimpse of who you are, I highly recommend giving it a try.`}
+              title={`Senior iOS Engineer`}
+              name={`Hakim Abdullah`}
+            />
+          </div>
+          <div>
+            <Testimonial
               imgSrc={Paul}
               videoSrc={`https://player.vimeo.com/video/872719438`}
               quote={`Working with Josh on my video resume was a delight
@@ -110,7 +120,7 @@ export default function Page() {
                       professionalism and ability to bring out the best in me
                       during our filming was second to none. He really knows how
                       to make you feel comfortable and direct you in a way to
-                      ensure that your video resume turns out as entertaining,
+                      ensure that your video resume turns out as entertaining, 
                       compelling, and informative as humanly possible. I would
                       100% suggest working with Josh on your video resume, and
                       plan to come back to him myself when the time comes to
@@ -123,7 +133,11 @@ export default function Page() {
             <Testimonial
               imgSrc={Armon}
               videoSrc={`https://player.vimeo.com/video/869303726`}
-              quote={`Having little on camera experience I was hesitant, but Josh knows exactly what to say to you to make your performance professional! He has a great ability to find the core of your message all while getting your personality to shine. I'm truly impressed with the results and have already recieved compliments from hiring managers!`}
+              quote={`Having little on camera experience I was hesitant, but Josh knows
+              exactly what to say to you to make your performance professional! He
+              has a great ability to find the core of your message all while
+              getting your personality to shine. I'm truly impressed with the
+              results and have already recieved compliments from hiring managers!`}
               title={`Full-Stack Engineer`}
               name={`Armon Arcuri`}
             />
@@ -145,19 +159,6 @@ export default function Page() {
           alt={"person working remote at coffee shop"}
         />
       </div>
-
-      {/* <div className="w-full h-64 flex items-center justify-center lg:h-144">
-        <div className="w-full h-full" id="welcome-video">
-          <iframe
-            title="vimeo-player"
-            src="https://player.vimeo.com/video/828795162?h=0fc5665123"
-            width="100%"
-            height="100%"
-          ></iframe>
-        </div>
-      </div> */}
-
-      {/* <canvas className="h-screen w-1/2" id="gradient-canvas" data-transition-in /> */}
     </div>
   );
 }
