@@ -2,6 +2,7 @@ import { Navigation } from "../components/navigation";
 import Image from "next/image";
 import JoshImg from "../../public/Josh_small.png";
 import ArmonImg from "../../public/armon.jpeg";
+import JohnImg from "../../public/john.png";
 const About = () => {
   const teamMembers = [
     {
@@ -19,6 +20,14 @@ const About = () => {
       title: "CTO",
       linkedIn: "https://www.linkedin.com/in/armon-arcuri/",
       desc: "Armon is a full-time Full-Stack developer and part time outdoors enthusiast. He loves conversations with good espresso and dreams about a catch & cook trip in the Alaskan backcountry.",
+    },
+    {
+      id: 2,
+      name: "John Fahnenstiel",
+      img: JohnImg,
+      title: "Business Advisor",
+      linkedIn: "https://www.linkedin.com/in/john-fahnenstiel-37296821",
+      desc: "John Fahnenstiel, a seasoned finance professional, serves as a Business Advisor to SeeV, leveraging over a decade of experience in the field. A Harvard University graduate with a Bachelor's Degree in Economics, John currently plays a pivotal role at Rocket Lawyer, holding the position of VP of Finance Operations. His diverse experience also includes key roles at Jefferies & Company, where he contributed to significant acquisitions and bond issuances, making him a valuable asset to the company.",
     },
   ];
 
