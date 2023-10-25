@@ -20,7 +20,7 @@ const features = [
   {
     name: "Final Cut",
     description:
-      "We edit and send you the final cut in the format of your choice",
+      "We edit and send you the final cut, then share wherever you want",
     icon: PlayCircleIcon,
   },
 ];
