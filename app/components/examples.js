@@ -19,7 +19,7 @@ export default function Examples() {
       name: "Paul Plicz",
       title: "Producer & Director",
       img: PaulImg,
-      videoSrc: `https://player.vimeo.com/video/872719438`,
+      videoSrc: `https://player.vimeo.com/video/877195105`,
       id: 1,
     },
     {

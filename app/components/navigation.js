@@ -12,10 +12,14 @@ export const Navigation = () => {
     { name: "Process", href: "#process", sidebar: false },
     { name: "Testimonials", href: "#testimonials", sidebar: false },
     { name: "Examples", href: "#examples", sidebar: false },
-    { name: "About", href: "about", sidebar: true },
+  ];
+  const siteNavigation = [
+    { name: "FAQ", href: "/faq", sidebar: true },
+    { name: "About", href: "/about", sidebar: true },
   ];
 
-  const navigation = pathname === "/" ? homeNavigation : [];
+  const navigation =
+    pathname === "/" ? [...homeNavigation, ...siteNavigation] : siteNavigation;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <header className="absolute inset-x-0 top-0 z-50">
@@ -65,7 +69,7 @@ export const Navigation = () => {
         <div className="fixed inset-0 z-50" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">See V</span>
               <Image className="h-16 w-auto" src={SeeV_logo} alt="logo" />
             </a>
@@ -83,7 +87,7 @@ export const Navigation = () => {
               <div className="space-y-2 py-6">
                 {navigation.map(
                   (item) =>
-                    item.sidebar && (
+                    !!item.sidebar && (
                       <a
                         key={item.name}
                         href={item.href}

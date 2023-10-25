@@ -133,7 +133,7 @@ export default function Page() {
 
       <Examples />
 
-      <div className="py-8 px-4 lg:py-16 lg:px-6">
+      <div className="">
         <Image
           className="hidden lg:block"
           src={Remote_person_lg}
