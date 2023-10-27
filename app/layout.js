@@ -1,12 +1,13 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import { StrictMode } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "SeeV",
-  description: "Bring your resume to life!",
+  title: "SeeV Video Resumes",
+  description: "Video resumes",
 };
 
 export default function RootLayout({ children }) {
@@ -14,7 +15,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Script src="https://js.stripe.com/v3/" />
       <StrictMode>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          {children}
+          <Analytics />
+        </body>
       </StrictMode>
     </html>
   );

@@ -136,7 +136,7 @@ const Questionnaire = () => {
         // TODO: needs to scroll up to the top of page
       } else if (data.id) {
         const job = getJobProfileId(data.jobProfiles);
-        router.push(`/checkout?jpid=${job[0].id}`);
+        router.push(`/producer/checkout?jpid=${job[0].id}`);
       }
     } catch (error) {
       console.error(error);

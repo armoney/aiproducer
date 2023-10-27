@@ -1,4 +1,4 @@
-import { Navigation } from "../components/navigation";
+import Navigation from "../components/navigation";
 import Image from "next/image";
 import JoshImg from "../../public/Josh_small.png";
 import ArmonImg from "../../public/armon.jpeg";

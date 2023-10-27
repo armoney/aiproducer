@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Dialog } from "@headlessui/react";
 import { usePathname } from "next/navigation";
 
-export const Navigation = () => {
+export default function Navigation() {
   const pathname = usePathname();
   const homeNavigation = [
     { name: "Process", href: "#process", sidebar: false },
@@ -112,4 +112,4 @@ export const Navigation = () => {
       </Dialog>
     </header>
   );
-};
+}

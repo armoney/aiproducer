@@ -1,5 +1,5 @@
-import Questionnaire from "../components/questionnaire";
-import { Navigation } from "../components/navigation";
+import Questionnaire from "../../components/questionnaire";
+import Navigation from "../../components/navigation";
 
 export default function Page() {
   return (

@@ -32,7 +32,7 @@ const Payment = memo(function Payment() {
       //   // const details = await retrievePurchaseDetails();
 
       //   // Show custom purchase summary
-      //   router.push("/confirmation");
+      //   router.push("/producer/confirmation");
       //   // showPurchaseSummary(details);
       // };
       const checkout = await stripe.initEmbeddedCheckout({
