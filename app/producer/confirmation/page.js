@@ -1,6 +1,6 @@
 "use client";
-import { Navigation } from "../components/navigation";
-import Calendly from "../components/calendly";
+import Navigation from "../../components/navigation";
+import Calendly from "../../components/calendly";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
@@ -20,7 +20,7 @@ export default function Page() {
       });
       const sessionData = await session.json();
       if (sessionData.status == "open") {
-        router.push(`/checkout?jpid=${jpid}`);
+        router.push(`/producer/checkout?jpid=${jpid}`);
       } else if (sessionData.status == "complete") {
         // Show success page
         // Optionally use session.payment_status or session.customer_email
@@ -35,7 +35,7 @@ export default function Page() {
     return (
       <div>
         <Navigation />
-        <div className="mx-auto max-w-3xl px-6 py-16 pt-14 sm:py-38  lg:px-8 lg:py-48">
+        <div className="mx-auto max-w-3xl px-6 py-36 lg:px-8 lg:py-48">
           <div className="flex justify-center">
             <CheckCircleIcon
               className="h-12 w-12 sm:h-16 sm:w-16 text-primary-500"

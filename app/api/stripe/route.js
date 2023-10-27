@@ -36,7 +36,7 @@ export async function POST(req) {
     mode: "payment",
     ui_mode: "embedded",
     client_reference_id: jpid,
-    return_url: `${req.nextUrl.protocol}//${req.nextUrl.host}/confirmation?session_id={CHECKOUT_SESSION_ID}&&jpid=${jpid}`,
+    return_url: `${req.nextUrl.protocol}//${req.nextUrl.host}/producer/confirmation?session_id={CHECKOUT_SESSION_ID}&&jpid=${jpid}`,
   });
 
   return NextResponse.json({ clientSecret: session.client_secret });

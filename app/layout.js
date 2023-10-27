@@ -5,8 +5,8 @@ import { StrictMode } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "SeeV",
-  description: "Bring your resume to life!",
+  title: "SeeV Video Resumes",
+  description: "Video resumes",
 };
 
 export default function RootLayout({ children }) {

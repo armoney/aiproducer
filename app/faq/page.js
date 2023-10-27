@@ -1,6 +1,6 @@
 "use client";
 import FAQ from "../components/faq";
-import { Navigation } from "../components/navigation";
+import Navigation from "../components/navigation";
 
 export default function Page() {
   return (
