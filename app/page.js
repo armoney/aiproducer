@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import Image from "next/image";
 import Navigation from "./components/navigation";
 import Slider from "react-slick";
@@ -13,8 +14,12 @@ import Hakim from "../public/hakim.jpeg";
 import "./page.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FullStory, init as initFullStory } from "@fullstory/browser";
 
 export default function Page() {
+  useEffect(() => {
+    initFullStory({ orgId: process.env.NEXT_PUBLIC_FS_ORG_ID });
+  }, []);
   const sliderSettings = {
     dots: true,
     infinite: true,
