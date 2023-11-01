@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 const Payment = memo(function Payment() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const jpid = searchParams.get("jpid");
+  const jpid = searchParams.get("jpid") || "default";
 
   useEffect(() => {
     const stripe = Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
