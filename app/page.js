@@ -16,6 +16,7 @@ import "./page.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FullStory, init as initFullStory } from "@fullstory/browser";
+import Script from "next/script";
 
 export default function Page() {
   useEffect(() => {
@@ -35,6 +36,7 @@ export default function Page() {
 
   return (
     <div className="bg-white">
+      <Script src="https://js.stripe.com/v3/" />
       <Navigation />
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div

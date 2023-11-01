@@ -30,7 +30,7 @@ const Payment = memo(function Payment() {
       //   // const details = await retrievePurchaseDetails();
 
       //   // Show custom purchase summary
-      //   router.push("/producer/confirmation");
+      //   router.push("/confirmation");
       //   // showPurchaseSummary(details);
       // };
       const checkout = await stripe.initEmbeddedCheckout({
@@ -44,6 +44,7 @@ const Payment = memo(function Payment() {
 
   return (
     <>
+      <Script src="https://js.stripe.com/v3/" strategy="beforeInteractive" />
       <div id="checkout">
         {/* <!-- Checkout will insert the payment form here --> */}
       </div>
