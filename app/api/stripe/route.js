@@ -19,7 +19,7 @@ export async function GET(req, res) {
 
 export async function POST(req) {
   const jpid = req.nextUrl.searchParams.get("jpid");
-  console.log("nextUrl: ", req.nextUrl);
+  // console.log("nextUrl: ", req.nextUrl);
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
@@ -27,8 +27,11 @@ export async function POST(req) {
           currency: "usd",
           product_data: {
             name: "SeeV Video",
+            images: [
+              "https://seevassets.s3.us-east-2.amazonaws.com/SeeV_LandingPage_4_small.png",
+            ],
           },
-          unit_amount: 49900,
+          unit_amount: 29900,
         },
         quantity: 1,
       },
