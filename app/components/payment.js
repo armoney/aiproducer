@@ -1,5 +1,6 @@
 "use client";
 import Script from "next/script";
+import Stripe from "stripe";
 import { useEffect, memo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
