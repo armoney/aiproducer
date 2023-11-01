@@ -137,9 +137,10 @@ export default function Page() {
               imgSrc={Armon}
               videoSrc={`https://player.vimeo.com/video/869303726`}
               quote={`Having little on camera experience I was hesitant, but Josh knows
-              exactly what to say to you to make your performance professional! I'm truly impressed with the
-              results and have already recieved compliments from hiring managers!`}
-              title={`Full-Stack Engineer`}
+              exactly what to say to you to make your performance professional!
+              I'm truly impressed with the results and have already recieved
+              compliments from hiring managers!`}
+              title={`Full Stack Engineer`}
               name={`Armon Arcuri`}
             />
           </div>
