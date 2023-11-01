@@ -68,8 +68,8 @@ export default function Pricing() {
                 <span className="text-5xl	font-bold	tracking-tight">$299</span>
               </p>
               <p className="mt-4 text-base leading-7 font-light text-gray-500">
-                The perfect plan if you're just getting started with our
-                product.
+                {`The perfect plan if you're just getting started with our
+                product.`}
               </p>
               <ul className="mt-8 leading-6	text-sm	gap-y-4">
                 {personalFeaturesList}
