@@ -12,6 +12,7 @@ export default function Navigation() {
     { name: "Process", href: "#process", sidebar: false },
     { name: "Testimonials", href: "#testimonials", sidebar: false },
     { name: "Examples", href: "#examples", sidebar: false },
+    { name: "Pricing", href: "#pricing", sidebar: false },
   ];
   const siteNavigation = [
     { name: "FAQ", href: "/faq", sidebar: true },

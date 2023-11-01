@@ -1,11 +1,12 @@
 "use client";
 import { useEffect } from "react";
 import Image from "next/image";
-import Navigation from "./components/navigation";
 import Slider from "react-slick";
+import Navigation from "./components/navigation";
 import Process from "./components/process";
 import Examples from "./components/examples";
 import Testimonial from "./components/testimonial";
+import Pricing from "./components/pricing";
 import Remote_person_lg from "../public/SeeV_LandingPage_8-min.png";
 import Remote_person_md from "../public/SeeV_LandingPage_9-min.jpeg";
 import Paul from "../public/paul.jpeg";
@@ -18,7 +19,9 @@ import { FullStory, init as initFullStory } from "@fullstory/browser";
 
 export default function Page() {
   useEffect(() => {
-    initFullStory({ orgId: process.env.NEXT_PUBLIC_FS_ORG_ID });
+    if (process.env.NODE_ENV !== "development") {
+      initFullStory({ orgId: process.env.NEXT_PUBLIC_FS_ORG_ID });
+    }
   }, []);
   const sliderSettings = {
     dots: true,
@@ -108,7 +111,7 @@ export default function Page() {
               imgSrc={Hakim}
               videoSrc={`https://player.vimeo.com/video/877390593`}
               quote={`My video resume experience with SeeV was great. They sent me a
-                  thorough questionnaire covering not just my engineering skills but
+                  thorough questionnaire covering not just my skills but
                   also my interests, family, and travel experiences. It's essential
                   to understand the person beyond their resume. Video resumes give a
                   real glimpse of who you are, I highly recommend giving it a try.`}
@@ -120,16 +123,11 @@ export default function Page() {
             <Testimonial
               imgSrc={Paul}
               videoSrc={`https://player.vimeo.com/video/872719438`}
-              quote={`Working with Josh on my video resume was a delight
-                      and a super amazing experience! Josh's
-                      professionalism and ability to bring out the best in me
-                      during our filming was second to none. He really knows how
-                      to make you feel comfortable and direct you in a way to
-                      ensure that your video resume turns out as entertaining, 
-                      compelling, and informative as humanly possible. I would
-                      100% suggest working with Josh on your video resume, and
-                      plan to come back to him myself when the time comes to
-                      film and create an updated one!`}
+              quote={`Josh really knows how to make you feel comfortable and direct you in
+              a way to ensure that your video resume turns out as entertaining,
+              compelling, and informative as humanly possible. I would 100%
+              suggest working with Josh, and plan to come back to him myself when
+              the time comes to film and create an updated one!`}
               title={`Producer & Director`}
               name={`Paul Plicz`}
             />
@@ -139,11 +137,10 @@ export default function Page() {
               imgSrc={Armon}
               videoSrc={`https://player.vimeo.com/video/869303726`}
               quote={`Having little on camera experience I was hesitant, but Josh knows
-              exactly what to say to you to make your performance professional! He
-              has a great ability to find the core of your message all while
-              getting your personality to shine. I'm truly impressed with the
-              results and have already recieved compliments from hiring managers!`}
-              title={`Full-Stack Engineer`}
+              exactly what to say to you to make your performance professional!
+              I'm truly impressed with the results and have already recieved
+              compliments from hiring managers!`}
+              title={`Full Stack Engineer`}
               name={`Armon Arcuri`}
             />
           </div>
@@ -151,7 +148,7 @@ export default function Page() {
       </div>
 
       <Examples />
-
+      <Pricing />
       <div className="">
         <Image
           className="hidden lg:block"

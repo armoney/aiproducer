@@ -35,7 +35,7 @@ const About = () => {
     return (
       <li key={member.id}>
         <Image
-          className="rounded-2xl	object-cover	w-full aspect-[2/3] h-auto"
+          className="rounded-2xl object-cover	w-full aspect-[2/3] h-auto"
           src={member.img}
           alt={member.name}
         />
@@ -64,7 +64,7 @@ const About = () => {
     <div>
       <Navigation />
       <div className="max-w-2xl m-auto sm:max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-7xl pt-48 px-8">
-        <ul className="pb-20 grid gap-x-28 gap-y-20 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <ul className="pb-20 grid gap-x-20 gap-y-20 grid-cols-1 sm:max-w-md md:max-w-7xl md:grid-cols-2 lg:grid-cols-3 xl:gap-x-28">
           <li className="max-w-2xl	md:col-span-2 lg:col-span-3">
             <h2 className="text-gray-900 text-3xl	font-bold	tracking-tight md:text-4xl">
               Our team
