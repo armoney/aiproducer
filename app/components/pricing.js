@@ -1,34 +1,33 @@
 import { CheckIcon } from "@heroicons/react/24/outline";
 
 export default function Pricing() {
-  const personalFeatures = [
-    "25 products",
-    "Up to 10,000 subscribers",
-    "Audience segmentation",
-    "Advanced analytics",
-    "Email support",
-    "Marketing automations",
+  const basicFeatures = [
+    "Free consultation call",
+    "Interview with experienced producer",
+    "Comprehensive narrative",
+    "Professional edit with visuals",
+    "One notes pass for small changes",
   ];
-  const bespokeFeatures = [
-    "Priority support",
-    "Single sign-on",
-    "Enterprise integrations",
-    "Custom reporting tools",
+  const customFeatures = [
+    "Free consultation call",
+    "Full Hollywood treatment",
+    "Custom visuals and graphics",
+    "Custom narrative",
   ];
 
-  const personalFeaturesList = personalFeatures.map((personalFeature, i) => {
+  const basicFeaturesList = basicFeatures.map((basicFeature, i) => {
     return (
       <li key={i} className="flex mt-4">
         <CheckIcon className="h-6 w-5 mr-4 text-primary-500" />
-        <p className="">{personalFeature}</p>
+        <p className="">{basicFeature}</p>
       </li>
     );
   });
-  const bespokeFeaturesList = bespokeFeatures.map((bespokeFeature, i) => {
+  const customFeaturesList = customFeatures.map((customFeature, i) => {
     return (
       <li key={i} className="flex mt-4">
         <CheckIcon className="h-6 w-5 mr-4 text-primary-500" />
-        <p className="">{bespokeFeature}</p>
+        <p className="">{customFeature}</p>
       </li>
     );
   });
@@ -62,7 +61,7 @@ export default function Pricing() {
           <div className="grid grid-cols-1 gap-y-6 items-center mt-12 sm:gap-y-0 lg:grid-cols-2 lg:gap-x-0">
             <div className="relative p-8 z-10 bg-white shadow-2xl shadow-slate-400 rounded-3xl border border-gray-300">
               <h3 className="text-base font-semibold leading-7 text-primary-500">
-                Personal
+                Basic
               </h3>
               <p className="flex mt-4 items-baseline gap-x-2">
                 <span className="text-5xl	font-bold	tracking-tight">$299</span>
@@ -72,7 +71,7 @@ export default function Pricing() {
                 product.`}
               </p>
               <ul className="mt-8 leading-6	text-sm	gap-y-4">
-                {personalFeaturesList}
+                {basicFeaturesList}
               </ul>
               <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
                 <a
@@ -86,17 +85,17 @@ export default function Pricing() {
             <div className="relative p-8 bg-slate-100 rounded-3xl border border-gray-300 sm:rounded-t-none sm:mx-8 sm:border-t-0 lg:mx-0 lg:rounded-3xl lg:rounded-l-none lg:border lg:border-l-0">
               {" "}
               <h3 className="text-base font-semibold leading-7 text-primary-500">
-                Bespoke
+                Custom
               </h3>
               <p className="mt-4 text-base leading-7 font-light text-gray-500">
-                We can produce whatever you like
+                Lets set a time to discuss your unique needs today!
               </p>
               <ul className="mt-8 leading-6	text-sm	gap-y-4">
-                {bespokeFeaturesList}
+                {customFeaturesList}
               </ul>
               <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
                 <a
-                  href="/about"
+                  href="/producer/checkout"
                   className="rounded-md bg-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                 >
                   Get a quote
