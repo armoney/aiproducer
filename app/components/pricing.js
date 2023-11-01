@@ -38,7 +38,7 @@ export default function Pricing() {
       className="relative isolate bg-white pt-24 pb-32 px-6 mx-auto lg:pt-8 pb-16 lg:px-8"
     >
       <div
-        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+        className="absolute inset-x-0 -top-16 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-20"
         aria-hidden="true"
       >
         <div
