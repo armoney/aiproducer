@@ -9,9 +9,7 @@ const Payment = memo(function Payment() {
   const jpid = searchParams.get("jpid");
 
   useEffect(() => {
-    const stripe = Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY, {
-      betas: ["embedded_checkout_beta_1"],
-    });
+    const stripe = Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
     initialize();
 

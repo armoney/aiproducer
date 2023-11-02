@@ -1,4 +1,5 @@
 import { CheckIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 export default function Pricing() {
   const basicFeatures = [
@@ -74,12 +75,13 @@ export default function Pricing() {
                 {basicFeaturesList}
               </ul>
               <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
-                <a
+                <Link
+                  prefetch={true}
                   href="/producer/checkout"
                   className="rounded-md bg-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                 >
                   Get started today
-                </a>
+                </Link>
               </div>
             </div>
             <div className="relative p-8 bg-slate-100 rounded-3xl border border-gray-300 sm:rounded-t-none sm:mx-8 sm:border-t-0 lg:mx-0 lg:rounded-3xl lg:rounded-l-none lg:border lg:border-l-0">
@@ -94,12 +96,13 @@ export default function Pricing() {
                 {customFeaturesList}
               </ul>
               <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
-                <a
+                <Link
+                  prefetch={true}
                   href="/producer/checkout"
                   className="rounded-md bg-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                 >
                   Get a quote
-                </a>
+                </Link>
               </div>
             </div>
           </div>
