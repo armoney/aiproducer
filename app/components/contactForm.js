@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Spinner from "./spinner";
 import Script from "next/script";
 import { TextInput, TextAreaInput, EmailInput, ErrorMessage } from "./form";
 import { useForm } from "react-hook-form";
