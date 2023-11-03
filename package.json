@@ -20,6 +20,7 @@
     "seed": "node prisma/seed.js"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@fullstory/browser": "^2.0.0",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",

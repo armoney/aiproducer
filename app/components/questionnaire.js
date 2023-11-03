@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import { useForm, Controller } from "react-hook-form";
@@ -59,11 +59,6 @@ const Questionnaire = () => {
       resolver: zodResolver(schema),
     });
   const { errors } = formState;
-
-  useEffect(() => {
-    console.log("errors", errors);
-    console.log("formState", formState);
-  });
 
   const attributeOptions = [
     { value: "calm", label: "Calm" },
