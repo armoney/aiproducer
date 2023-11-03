@@ -3,6 +3,8 @@ import Image from "next/image";
 import JoshImg from "../../public/Josh_small.png";
 import ArmonImg from "../../public/armon.jpeg";
 import JohnImg from "../../public/john.png";
+import { EnvelopeIcon } from "@heroicons/react/24/outline";
+
 const About = () => {
   const teamMembers = [
     {
@@ -78,6 +80,10 @@ const About = () => {
               stars by maximizing their credibility, attractiveness, and
               likability on camera.`}
             </p>
+            <div className="mt-6 flex items-center">
+              <EnvelopeIcon className="mr-4 h-6 w-6 text-gray-600" />
+              <p className="text-gray-600 text-lg leading-8">admin@seev.work</p>
+            </div>
           </li>
           {cards}
         </ul>
