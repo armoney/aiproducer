@@ -1,7 +1,9 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
+import Modal from "./components/modal";
+import ContactForm from "./components/contactForm";
 import Navigation from "./components/navigation";
 import Process from "./components/process";
 import Examples from "./components/examples";
@@ -18,6 +20,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FullStory, init as initFullStory } from "@fullstory/browser";
 
 export default function Page() {
+  const [openModal, setOpenModal] = useState(false);
   useEffect(() => {
     if (process.env.NODE_ENV !== "development") {
       initFullStory({ orgId: process.env.NEXT_PUBLIC_FS_ORG_ID });
@@ -67,6 +70,18 @@ export default function Page() {
               >
                 Get started
               </a>
+              <a
+                href="#"
+                className="text-sm font-semibold leading-6 text-gray-900"
+                onClick={() => setOpenModal(true)}
+              >
+                Free Consultation <span aria-hidden="true">→</span>
+              </a>
+              <Modal isOpen={openModal} closeIt={() => setOpenModal(false)}>
+                <div id="contact-form">
+                  <ContactForm formName={"Free Consultation"} />
+                </div>
+              </Modal>
             </div>
           </div>
           <div className="max-w-full h-80 md:h-96">
