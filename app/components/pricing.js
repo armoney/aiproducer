@@ -1,7 +1,11 @@
+import { useState } from "react";
+import Modal from "../components/modal";
+import ContactForm from "../components/contactForm";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 export default function Pricing() {
+  const [openModal, setOpenModal] = useState(false);
   const basicFeatures = [
     "Free consultation call",
     "Interview with experienced producer",
@@ -32,6 +36,7 @@ export default function Pricing() {
       </li>
     );
   });
+
   return (
     <div
       id="pricing"
@@ -96,14 +101,18 @@ export default function Pricing() {
                 {customFeaturesList}
               </ul>
               <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
-                <Link
-                  prefetch={true}
-                  href="/producer/checkout"
+                <button
+                  onClick={() => setOpenModal(true)}
                   className="rounded-md bg-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                 >
                   Get a quote
-                </Link>
+                </button>
               </div>
+              <Modal isOpen={openModal} closeIt={() => setOpenModal(false)}>
+                <div id="contact-form">
+                  <ContactForm />
+                </div>
+              </Modal>
             </div>
           </div>
         </div>

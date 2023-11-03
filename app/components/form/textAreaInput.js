@@ -1,7 +1,7 @@
 import React from "react";
-
+import ErrorMessage from "./errorMessage";
 const TextAreaInput = React.forwardRef(
-  ({ onChange, id, name, label, height }, ref) => (
+  ({ onChange, id, name, label, height, errorMessage }, ref) => (
     <label htmlFor={id} className="block">
       <span className="text-gray-700">{label}</span>
       <textarea
@@ -13,6 +13,7 @@ const TextAreaInput = React.forwardRef(
         onChange={onChange}
         ref={ref}
       ></textarea>
+      <ErrorMessage message={errorMessage} />
     </label>
   )
 );
