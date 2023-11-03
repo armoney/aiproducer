@@ -110,7 +110,7 @@ export default function Pricing() {
               </div>
               <Modal isOpen={openModal} closeIt={() => setOpenModal(false)}>
                 <div id="contact-form">
-                  <ContactForm />
+                  <ContactForm formName={"Custom Quote"} />
                 </div>
               </Modal>
             </div>

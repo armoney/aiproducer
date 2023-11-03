@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
+import Script from "next/script";
 import { TextInput, TextAreaInput, EmailInput, ErrorMessage } from "./form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { string, z } from "zod";
+import { RocketLaunchIcon, SparklesIcon } from "@heroicons/react/20/solid";
 
 const schema = z.object({
   name: string().min(2, { message: "Please enter your full name" }),
@@ -20,9 +23,30 @@ export default function ContactForm({ formName }) {
   const { errors } = formState;
   const submitForm = async (formValues) => {
     setLoading(true);
-    console.log(formValues);
+
+    const templateParams = {
+      form_name: formName,
+      name: formValues.name,
+      message: formValues.message,
+      email: formValues.email,
+    };
+
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        templateParams
+      )
+      .then(
+        function (response) {
+          setSubmitted(true);
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
     setLoading(false);
-    setSubmitted(true);
   };
 
   useEffect(() => {
@@ -30,6 +54,12 @@ export default function ContactForm({ formName }) {
   });
   return (
     <div className="w-80 min-h-80 md:w-96">
+      <Script
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+        onLoad={() => {
+          emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+        }}
+      ></Script>
       {!submitted && (
         <form name={formName} id={formName} onSubmit={handleSubmit(submitForm)}>
           <div className="mt-8 grid grid-cols-1 gap-6 items-start">
@@ -74,7 +104,23 @@ export default function ContactForm({ formName }) {
           </div>
         </form>
       )}
-      {submitted && <div>hi</div>}
+      {submitted && (
+        <div className="p-4">
+          <div className="flex justify-center">
+            <RocketLaunchIcon className="h-24 w-24 text-primary-500" />
+            <SparklesIcon className="h-24 w-24 text-primary-500" />
+          </div>
+          <div className="flex flex-col justify-center">
+            <h2 className="mt-12 text-center text-5xl font-bold tracking-tight">
+              Thank you!
+            </h2>
+            <p className="my-4 text-base leading-7 font-light text-gray-500">
+              We recieved your message and are working hard to respond to you
+              soon.
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
