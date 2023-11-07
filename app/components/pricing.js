@@ -95,7 +95,7 @@ export default function Pricing() {
               <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
                 <Link
                   prefetch={true}
-                  href="/producer/checkout?name=intro&price=99"
+                  href="/producer/checkout?name=Introduction&price=9900"
                   className="rounded-md ring-1 ring-primary-200 text-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold hover:ring-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                 >
                   Get started today
@@ -118,7 +118,7 @@ export default function Pricing() {
               <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
                 <Link
                   prefetch={true}
-                  href="/producer/checkout?name=intro&price=99"
+                  href="/producer/checkout?name=Standard&price=29900"
                   className="rounded-md ring-1 ring-primary-200 text-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold hover:ring-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                 >
                   Get started today
@@ -146,7 +146,7 @@ export default function Pricing() {
               <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
                 <Link
                   prefetch={true}
-                  href="/producer/checkout?name=basic&price=99"
+                  href="/producer/checkout?name=Combination&price=37500"
                   className="rounded-md bg-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                 >
                   Get started today
