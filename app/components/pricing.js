@@ -32,9 +32,9 @@ export default function Pricing() {
     "Custom narrative",
   ];
 
-  const CardListItem = ({ feature, i }) => {
+  const CardListItem = ({ feature }) => {
     return (
-      <li key={i} className="flex mt-4">
+      <li className="flex mt-4">
         <CheckIcon className="h-6 w-5 mr-4 text-primary-500" />
         <p className="">{feature}</p>
       </li>
@@ -42,16 +42,16 @@ export default function Pricing() {
   };
 
   const introFeaturesList = introFeatures.map((introFeature, i) => {
-    return <CardListItem feature={introFeature} i={i} />;
+    return <CardListItem feature={introFeature} key={i} />;
   });
   const standardFeaturesList = standardFeatures.map((standardFeature, i) => {
-    return <CardListItem feature={standardFeature} i={i} />;
+    return <CardListItem feature={standardFeature} key={i} />;
   });
   const multiFeaturesList = multiFeatures.map((multiFeature, i) => {
-    return <CardListItem feature={multiFeature} i={i} />;
+    return <CardListItem feature={multiFeature} key={i} />;
   });
   const customFeaturesList = customFeatures.map((customFeature, i) => {
-    return <CardListItem feature={customFeature} i={i} />;
+    return <CardListItem feature={customFeature} key={i} />;
   });
 
   return (
