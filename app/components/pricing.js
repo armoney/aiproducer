@@ -80,7 +80,7 @@ export default function Pricing() {
             The right price for you, whoever you are
           </p>
         </div>
-        <div className="mx-auto max-w-lg lg:max-w-4xl xl:max-w-7xl">
+        <div className="mx-auto lg:max-w-4xl xl:max-w-7xl">
           <div className="grid grid-cols-1 gap-y-6 gap-x-6 mt-12 md:grid-cols-2 xl:grid-cols-4">
             <div className="relative p-8 z-10 bg-white rounded-3xl border border-gray-300">
               <h3 className="text-base font-semibold leading-7 text-primary-500">
