@@ -6,12 +6,24 @@ import Link from "next/link";
 
 export default function Pricing() {
   const [openModal, setOpenModal] = useState(false);
-  const basicFeatures = [
+  const introFeatures = [
+    "Free consultation call",
+    "Interview with experienced producer",
+    "Concice message",
+    "Professional editing",
+    "Up to one minute length",
+  ];
+  const standardFeatures = [
     "Free consultation call",
     "Interview with experienced producer",
     "Comprehensive narrative",
     "Professional edit with visuals",
     "One notes pass for small changes",
+  ];
+  const multiFeatures = [
+    "Intro and Standard video",
+    "2 notes passes for small changes",
+    "Best value",
   ];
   const customFeatures = [
     "Free consultation call",
@@ -20,21 +32,26 @@ export default function Pricing() {
     "Custom narrative",
   ];
 
-  const basicFeaturesList = basicFeatures.map((basicFeature, i) => {
+  const CardListItem = ({ feature }) => {
     return (
-      <li key={i} className="flex mt-4">
+      <li className="flex mt-4">
         <CheckIcon className="h-6 w-5 mr-4 text-primary-500" />
-        <p className="">{basicFeature}</p>
+        <p className="">{feature}</p>
       </li>
     );
+  };
+
+  const introFeaturesList = introFeatures.map((introFeature, i) => {
+    return <CardListItem feature={introFeature} key={i} />;
+  });
+  const standardFeaturesList = standardFeatures.map((standardFeature, i) => {
+    return <CardListItem feature={standardFeature} key={i} />;
+  });
+  const multiFeaturesList = multiFeatures.map((multiFeature, i) => {
+    return <CardListItem feature={multiFeature} key={i} />;
   });
   const customFeaturesList = customFeatures.map((customFeature, i) => {
-    return (
-      <li key={i} className="flex mt-4">
-        <CheckIcon className="h-6 w-5 mr-4 text-primary-500" />
-        <p className="">{customFeature}</p>
-      </li>
-    );
+    return <CardListItem feature={customFeature} key={i} />;
   });
 
   return (
@@ -54,7 +71,7 @@ export default function Pricing() {
           }}
         />
       </div>
-      <div className="mx-auto sm:mt-20 lg:mt-12 lg:max-w-4xl">
+      <div className="mx-auto sm:mt-20 lg:mt-12 lg:max-w-4xl xl:max-w-7xl">
         <div className="mx-auto max-w-2xl lg:max-w-4xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-primary-500 lg:text-center">
             Pricing
@@ -63,51 +80,103 @@ export default function Pricing() {
             The right price for you, whoever you are
           </p>
         </div>
-        <div className="mx-auto max-w-lg lg:max-w-4xl">
-          <div className="grid grid-cols-1 gap-y-6 items-center mt-12 sm:gap-y-0 lg:grid-cols-2 lg:gap-x-0">
-            <div className="relative p-8 z-10 bg-white shadow-2xl shadow-slate-400 rounded-3xl border border-gray-300">
+        <div className="mx-auto lg:max-w-4xl xl:max-w-7xl">
+          <div className="grid grid-cols-1 gap-y-6 gap-x-6 mt-12 md:grid-cols-2 xl:grid-cols-4">
+            <div className="relative p-8 z-10 bg-white rounded-3xl border border-gray-300">
               <h3 className="text-base font-semibold leading-7 text-primary-500">
-                Basic
+                Introduction
+              </h3>
+              <p className="flex mt-4 items-baseline gap-x-2">
+                <span className="text-5xl	font-bold	tracking-tight">$99</span>
+              </p>
+              <p className="mt-4 text-base leading-7 font-light text-gray-500">
+                {`Perfect for showing your personality and communication skills.`}
+              </p>
+              <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
+                <Link
+                  prefetch={true}
+                  href="/producer/checkout?name=Introduction&price=9900"
+                  className="rounded-md ring-1 ring-primary-200 text-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold hover:ring-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+                >
+                  Get started today
+                </Link>
+              </div>
+              <ul className="mt-8 leading-6	text-sm	gap-y-4">
+                {introFeaturesList}
+              </ul>
+            </div>
+            <div className="relative p-8 z-10 bg-white rounded-3xl border border-gray-300">
+              <h3 className="text-base font-semibold leading-7 text-primary-500">
+                Standard
               </h3>
               <p className="flex mt-4 items-baseline gap-x-2">
                 <span className="text-5xl	font-bold	tracking-tight">$299</span>
               </p>
               <p className="mt-4 text-base leading-7 font-light text-gray-500">
-                {`The perfect plan if you're just getting started with our
-                product.`}
+                {`Perfect for showing your personality and professional work.`}
               </p>
-              <ul className="mt-8 leading-6	text-sm	gap-y-4">
-                {basicFeaturesList}
-              </ul>
               <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
                 <Link
                   prefetch={true}
-                  href="/producer/checkout"
+                  href="/producer/checkout?name=Standard&price=29900"
+                  className="rounded-md ring-1 ring-primary-200 text-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold hover:ring-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+                >
+                  Get started today
+                </Link>
+              </div>
+              <ul className="mt-8 leading-6	text-sm	gap-y-4">
+                {standardFeaturesList}
+              </ul>
+            </div>
+            <div className="relative ring-2 ring-primary-500 p-8 z-10 bg-white rounded-3xl">
+              <div className="flex flex-row justify-between	gap-x-1">
+                <h3 className="text-base font-semibold leading-7 text-primary-500">
+                  Combination
+                </h3>
+                <p className="text-xs	text-primary-500 leading-5 font-semibold py-1 px-3 bg-primary-100 rounded-full">
+                  Most popular
+                </p>
+              </div>
+              <p className="flex mt-4 items-baseline gap-x-2">
+                <span className="text-5xl	font-bold	tracking-tight">$375</span>
+              </p>
+              <p className="mt-4 text-base leading-7 font-light text-gray-500">
+                {`Perfect for including with your job applcation and for your social network`}
+              </p>
+              <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
+                <Link
+                  prefetch={true}
+                  href="/producer/checkout?name=Combination&price=37500"
                   className="rounded-md bg-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                 >
                   Get started today
                 </Link>
               </div>
+              <ul className="mt-8 leading-6	text-sm	gap-y-4">
+                {multiFeaturesList}
+              </ul>
             </div>
-            <div className="relative p-8 bg-slate-100 rounded-3xl border border-gray-300 sm:rounded-t-none sm:mx-8 sm:border-t-0 lg:mx-0 lg:rounded-3xl lg:rounded-l-none lg:border lg:border-l-0">
-              {" "}
+            <div className="relative p-8 z-10 bg-white rounded-3xl border border-gray-300">
               <h3 className="text-base font-semibold leading-7 text-primary-500">
                 Custom
               </h3>
-              <p className="mt-4 text-base leading-7 font-light text-gray-500">
-                Lets set a time to discuss your unique needs today!
+              <p className="flex mt-4 items-baseline gap-x-2">
+                <span className="text-5xl	font-bold	tracking-tight"></span>
               </p>
-              <ul className="mt-8 leading-6	text-sm	gap-y-4">
-                {customFeaturesList}
-              </ul>
-              <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
+              <p className="text-base leading-7 font-light text-gray-500">
+                {`Have more custom needs for your video resume's visuals or narrative structure? Interested in having us come out with a full crew? Lets set a time to discuss today!`}
+              </p>
+              <div className="mt-6 flex items-center justify-center gap-x-6 xl:justify-start">
                 <button
                   onClick={() => setOpenModal(true)}
-                  className="rounded-md bg-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+                  className="rounded-md ring-1 ring-primary-200 text-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold hover:ring-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                 >
                   Get a quote
                 </button>
               </div>
+              <ul className="mt-8 leading-6	text-sm	gap-y-4">
+                {customFeaturesList}
+              </ul>
               <Modal isOpen={openModal} closeIt={() => setOpenModal(false)}>
                 <div id="contact-form">
                   <ContactForm formName={"Custom Quote"} />

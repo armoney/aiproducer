@@ -7,6 +7,8 @@ const Payment = memo(function Payment() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const jpid = searchParams.get("jpid");
+  const name = searchParams.get("name");
+  const price = searchParams.get("price");
 
   useEffect(() => {
     const stripe = Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
@@ -15,9 +17,12 @@ const Payment = memo(function Payment() {
 
     // Fetches a session and captures the client secret
     async function initialize() {
-      const response = await fetch(`/api/stripe?jpid=${jpid}`, {
-        method: "POST",
-      });
+      const response = await fetch(
+        `/api/stripe?jpid=${jpid}&name=${name}&price=${price}`,
+        {
+          method: "POST",
+        }
+      );
 
       const { clientSecret } = await response.json();
 
