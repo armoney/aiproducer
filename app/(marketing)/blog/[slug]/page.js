@@ -1,4 +1,5 @@
 import { getAllPostIds, getPostData } from "../../../../lib/posts";
+import Date from "../../../components/date";
 import Head from "next/head";
 
 export async function generateStaticParams() {

@@ -12,5 +12,7 @@ async function getPosts() {
 export default async function Index() {
   const posts = await getPosts();
   // console.log("posts: ", posts.props.allPostsData);
-  return posts.props.allPostsData.map((post) => <div>{post.title}</div>);
+  return posts.props.allPostsData.map((post) => (
+    <div key={post.title}>{post.title}</div>
+  ));
 }
