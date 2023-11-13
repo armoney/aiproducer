@@ -9,7 +9,7 @@ export default function Pricing() {
   const introFeatures = [
     "Free consultation call",
     "Interview with experienced producer",
-    "Concice message",
+    "Concise message",
     "Professional editing",
     "Up to one minute length",
   ];
