@@ -26,13 +26,27 @@ export default async function Post({ params }) {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article>
-        <h1>{postData.title}</h1>
-        <div>
-          <Date dateString={postData.date} />
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
+      <div>
+        {/* <Image src={postData.heroSrc} /> */}
+        <article className="max-w-7xl">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            {postData.title}
+          </h1>
+          <h2 className="text-base font-semibold leading-7 text-gray-900">
+            {postData.author}
+          </h2>
+          <div>
+            <Date
+              className="mt-2 text-base leading-7 text-gray-600"
+              dateString={postData.date}
+            />
+          </div>
+          <div
+            className="mt-6 text-lg leading-8 text-gray-600"
+            dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+          />
+        </article>
+      </div>
     </>
   );
   // return <PostLayout post={post} />;
