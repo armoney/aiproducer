@@ -20,11 +20,6 @@ export default function Pricing() {
     "Professional edit with visuals",
     "One notes pass for small changes",
   ];
-  const multiFeatures = [
-    "Intro and Standard video",
-    "2 notes passes for small changes",
-    "Best value",
-  ];
   const customFeatures = [
     "Free consultation call",
     "Full Hollywood treatment",
@@ -46,9 +41,6 @@ export default function Pricing() {
   });
   const standardFeaturesList = standardFeatures.map((standardFeature, i) => {
     return <CardListItem feature={standardFeature} key={i} />;
-  });
-  const multiFeaturesList = multiFeatures.map((multiFeature, i) => {
-    return <CardListItem feature={multiFeature} key={i} />;
   });
   const customFeaturesList = customFeatures.map((customFeature, i) => {
     return <CardListItem feature={customFeature} key={i} />;
@@ -81,7 +73,7 @@ export default function Pricing() {
           </p>
         </div>
         <div className="mx-auto lg:max-w-4xl xl:max-w-7xl">
-          <div className="grid grid-cols-1 gap-y-6 gap-x-6 mt-12 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-y-6 gap-x-6 mt-12 md:grid-cols-2 xl:grid-cols-3">
             <div className="relative p-8 z-10 bg-white rounded-3xl border border-gray-300">
               <h3 className="text-base font-semibold leading-7 text-primary-500">
                 Introduction
@@ -105,10 +97,15 @@ export default function Pricing() {
                 {introFeaturesList}
               </ul>
             </div>
-            <div className="relative p-8 z-10 bg-white rounded-3xl border border-gray-300">
-              <h3 className="text-base font-semibold leading-7 text-primary-500">
-                Standard
-              </h3>
+            <div className="relative ring-2 ring-primary-500 p-8 z-10 bg-white rounded-3xl">
+              <div className="flex flex-row justify-between	gap-x-1">
+                <h3 className="text-base font-semibold leading-7 text-primary-500">
+                  Standard
+                </h3>
+                <p className="text-xs	text-primary-500 leading-5 font-semibold py-1 px-3 bg-primary-100 rounded-full">
+                  Most popular
+                </p>
+              </div>
               <p className="flex mt-4 items-baseline gap-x-2">
                 <span className="text-5xl	font-bold	tracking-tight">$299</span>
               </p>
@@ -118,42 +115,14 @@ export default function Pricing() {
               <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
                 <Link
                   prefetch={true}
-                  href="/producer/checkout?name=Standard&price=29900"
-                  className="rounded-md ring-1 ring-primary-200 text-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold hover:ring-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
-                >
-                  Get started today
-                </Link>
-              </div>
-              <ul className="mt-8 leading-6	text-sm	gap-y-4">
-                {standardFeaturesList}
-              </ul>
-            </div>
-            <div className="relative ring-2 ring-primary-500 p-8 z-10 bg-white rounded-3xl">
-              <div className="flex flex-row justify-between	gap-x-1">
-                <h3 className="text-base font-semibold leading-7 text-primary-500">
-                  Combination
-                </h3>
-                <p className="text-xs	text-primary-500 leading-5 font-semibold py-1 px-3 bg-primary-100 rounded-full">
-                  Most popular
-                </p>
-              </div>
-              <p className="flex mt-4 items-baseline gap-x-2">
-                <span className="text-5xl	font-bold	tracking-tight">$375</span>
-              </p>
-              <p className="mt-4 text-base leading-7 font-light text-gray-500">
-                {`Perfect for including with your job applcation and for your social network`}
-              </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
-                <Link
-                  prefetch={true}
-                  href="/producer/checkout?name=Combination&price=37500"
+                  href="/producer/checkout?name=Combination&price=29900"
                   className="rounded-md bg-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                 >
                   Get started today
                 </Link>
               </div>
               <ul className="mt-8 leading-6	text-sm	gap-y-4">
-                {multiFeaturesList}
+                {standardFeaturesList}
               </ul>
             </div>
             <div className="relative p-8 z-10 bg-white rounded-3xl border border-gray-300">

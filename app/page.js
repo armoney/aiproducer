@@ -32,7 +32,7 @@ export default function Page() {
     speed: 500,
     slidesToShow: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 12000,
     slidesToScroll: 1,
   };
 
