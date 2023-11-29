@@ -33,7 +33,9 @@ export default async function Post({ params }) {
             {postData.title}
           </h1>
           <h2 className="text-base font-semibold leading-7 text-gray-900">
-            {postData.author}
+            By <span>{postData.author_name}</span>,{" "}
+            <span>{postData.author_company}</span>{" "}
+            <span>{postData.author_title}</span>
           </h2>
           <div>
             <Date

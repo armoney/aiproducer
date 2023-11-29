@@ -1,14 +1,18 @@
 ---
 title: "Definitive Guide For Making a Killer Video Resume"
-author: "By Josh Murphy, SeeV.work Co-Founder"
+author_name: "Josh Murphy"
+author_title: "Co-Founder"
+author_company: "SeeV.work"
 date: "2023-11-01"
 ---
+
+![Alt text](/logo.png "title")
 
 So, you’re considering making your own video resume, but aren’t sure where to start. Well, you’ve come to the right place! Prior to founding SeeV.work, I spent the past dozen years working as a producer and creative executive in Hollywood turning real people and their businesses into reality stars with pitch videos called “sizzle tapes.” Ninety-nine percent of the pitches I sold drew upon the same visual and narrative rules, many of which we drew upon when building our video resume product here. I’ve done my best to compile the 4 most important rules for you in the following article.
 
 Video creation is more art than science, but you can be confident that if you follow this definitive guide, you’ll look good, sound professional and likable, and no hiring managers will be injured in the watching of your video resume. Alright, without further ado, here is the Hollywood TV producer’s definitive guide for crafting a killer video resume.
 
-Rule #1: Look Good
+### Rule #1: Look Good
 
 Spoiler alert, the stars of your favorite TV shows, movies, and social media platforms don’t look like that all the time! They put a lot of time and effort (not to mention filters and Photoshopping) into looking that good! And no, I’m not suggesting getting lip fillers, or hiring the team from Queer Eye. However, you should absolutely consider how to craft the most attractive and put together presentation of yourself for your video resume with things like…
 
