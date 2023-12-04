@@ -1,28 +1,50 @@
 import { getAllPostIds, getPostData } from "../../../../lib/posts";
 import Head from "next/head";
+const URL = process.env.STRAPI_BASE_URL;
 
 export async function generateStaticParams() {
-  const paths = getAllPostIds();
-  console.log("paths: ", paths);
-  return paths.map((path) => ({
-    slug: path.slug,
+  const fetchParams = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: `query {
+          blogposts {
+            data {
+              attributes {
+                slug
+              }
+            }
+          }
+        }`,
+    }),
+  };
+  const res = await fetch(`${URL}/graphql`, fetchParams);
+  const { data } = await res.json();
+
+  console.log("data111: ", data);
+
+  return data.blogposts.data.map((blogpost) => ({
+    slug: blogpost.attributes.slug,
   }));
 }
 
-async function getPost(params) {
-  const postData = await getPostData(params);
+// async function getPost(params) {
+//   const postData = await getPostData(params);
 
-  return postData;
-}
+//   return postData;
+// }
 
 export default async function Post({ params }) {
   const { slug } = params;
   console.log("slug: ", slug);
-  const postData = await getPost(slug);
+  // const postData = await getPost(slug);
 
   return (
     <>
-      <Head>
+      HI
+      {/* <Head>
         <title>{postData.title}</title>
       </Head>
       <article>
@@ -31,7 +53,7 @@ export default async function Post({ params }) {
           <Date dateString={postData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
+      </article> */}
     </>
   );
   // return <PostLayout post={post} />;

@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       height: {
         144: "36rem",
+        500: "31.25rem",
       },
       colors: {
         "secondary-600": "#468202",
