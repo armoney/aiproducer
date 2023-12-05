@@ -16,6 +16,7 @@ export default function Navigation() {
   ];
   const siteNavigation = [
     { name: "FAQ", href: "/faq", sidebar: true },
+    { name: "Blog", href: "/blog", sidebar: true },
     { name: "About", href: "/about", sidebar: true },
   ];
 

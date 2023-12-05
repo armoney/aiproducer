@@ -1,0 +1,32 @@
+.reactMarkdown {
+  font-family: "__Inter_e66fe9", "__Inter_Fallback_e66fe9";
+  font-style: normal;
+  color: rgb(17 24 39);
+}
+.reactMarkdown p {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  letter-spacing: -0.1px;
+  margin-top: 1.125rem;
+}
+.reactMarkdown p img {
+  margin: 2rem auto;
+}
+.reactMarkdown h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 2.75rem;
+  letter-spacing: -0.1px;
+  margin-top: 2rem;
+}
+.reactMarkdown ul {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  letter-spacing: -0.1px;
+  list-style-type: disc;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.reactMarkdown li {
+  margin: 0.5rem 5% 0;
+}
