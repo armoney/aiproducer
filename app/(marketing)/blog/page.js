@@ -52,7 +52,7 @@ export default async function Index() {
   const LatestPost = function ({ attributes }) {
     return (
       <div className="mt-4">
-        <div className="flex gap-4 flex-col md:flex-row md:items-center md:grid md:grid-cols-12">
+        <div className="flex gap-6 flex-col md:flex-row md:items-center md:grid md:grid-cols-12">
           <div className="md:flex md:col-start-1 md:col-span-7">
             <Image
               src={`${URL}${attributes.splash.data.attributes.url}`}
@@ -120,7 +120,7 @@ export default async function Index() {
   ));
 
   return (
-    <div className="mt-32 py-12 px-6 md:px-16">
+    <div className="mt-32 py-12 px-4 max-w-screen-xl mx-auto md:px-6 xl:px-2">
       <Navigation />
 
       <div className="text-left md:pb-8 lg:flex lg:pb-16 lg:grid lg:grid-cols-12">
