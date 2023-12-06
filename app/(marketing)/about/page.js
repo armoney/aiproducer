@@ -1,8 +1,8 @@
-import Navigation from "../components/navigation";
+import Navigation from "../../components/navigation";
 import Image from "next/image";
-import JoshImg from "../../public/Josh_small.png";
-import ArmonImg from "../../public/armon.jpeg";
-import JohnImg from "../../public/john.png";
+import JoshImg from "../../../public/Josh_small.png";
+import ArmonImg from "../../../public/armon.jpeg";
+import JohnImg from "../../../public/john.png";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
 
 const About = () => {
