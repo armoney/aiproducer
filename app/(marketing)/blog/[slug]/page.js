@@ -173,7 +173,7 @@ export default async function Post({ params }) {
 
         <div className="mt-16 text-center text-2xl font-semibold leading-8 text-gray-900 sm:text-3xl sm:leading-9">
           <p className="">Get started with SeeV today!</p>
-          <p>We'll help you create an amazing video resume</p>
+          <p>We&apos;ll help you create an amazing video resume</p>
 
           <div className="mt-10 flex text-center items-center justify-center gap-x-6">
             <a
