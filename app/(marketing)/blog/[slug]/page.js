@@ -79,7 +79,7 @@ async function getPostData(slug) {
       }`,
     }),
   };
-  console.log("slug111: ", slug);
+
   const res = await fetch(`${URL}/graphql`, fetchParams);
   const { data } = await res.json();
   return data;
@@ -89,7 +89,6 @@ export default async function Post({ params }) {
   const { slug } = params;
   const postData = await getPostData(slug);
   const data = postData.blogposts.data[0];
-  console.log("tags111: ", data.attributes.tags);
 
   const PostBody = function () {
     return (
@@ -100,7 +99,6 @@ export default async function Post({ params }) {
   };
 
   const tags = data.attributes.tags.data.map((tag) => {
-    console.log("tag111: ", tag);
     return (
       <li
         key={tag.attributes.name}
