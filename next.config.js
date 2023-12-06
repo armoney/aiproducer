@@ -11,7 +11,13 @@ const nextConfig = {
         hostname: '127.0.0.1',
         port: '1337',
         pathname: '/uploads/**',
-      },      
+      },
+      {
+        protocol: 'https',
+        hostname: 'rocky-ravine-63920-5c77fc84933b.herokuapp.com',
+        port: '1337',
+        pathname: '/uploads/**',
+      },       
     ],
   },
 };
