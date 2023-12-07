@@ -89,10 +89,6 @@ export default async function Post({ params }) {
   const { slug } = params;
   const postData = await getPostData(slug);
   const data = postData.blogposts.data[0];
-  console.log(
-    "URL111: ",
-    `${URL}${data.attributes.splash.data.attributes.url}`
-  );
 
   const PostBody = function () {
     return (
