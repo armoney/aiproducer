@@ -55,7 +55,7 @@ export default async function Index() {
         <div className="flex gap-6 flex-col md:flex-row md:items-center md:grid md:grid-cols-12">
           <div className="md:flex md:col-start-1 md:col-span-7">
             <Image
-              src={`${URL}${attributes.splash.data.attributes.url}`}
+              src={`${attributes.splash.data.attributes.url}`}
               className="w-100 h-auto md:h-500 md:object-cover md:object-right"
               width={800}
               height={800}
@@ -74,7 +74,7 @@ export default async function Index() {
             <div className="md:flex md:items-center">
               <Image
                 className="mt-6 h-16 w-16 rounded-full"
-                src={`${URL}${attributes.author_image.data.attributes.url}`}
+                src={`${attributes.author_image.data.attributes.url}`}
                 width={70}
                 height={70}
                 alt={`${attributes.author_name} image`}
@@ -99,7 +99,7 @@ export default async function Index() {
     <li key={blogpost.attributes.slug} className="mt-12">
       <Link href={`/blog/${blogpost.attributes.slug}`}>
         <Image
-          src={`${URL}${blogpost.attributes.splash.data.attributes.url}`}
+          src={`${blogpost.attributes.splash.data.attributes.url}`}
           className="w-100 h-56 object-cover"
           width={800}
           height={800}

@@ -16,7 +16,12 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'rocky-ravine-63920-5c77fc84933b.herokuapp.com',
         pathname: '/uploads/**',
-      },       
+      },  
+      {
+        protocol: 'https',
+        hostname: 'seev-strapi-cms-s3-images-bucket.s3.us-east-2.amazonaws.com',
+        pathname: '/**',
+      }     
     ],
   },
 };

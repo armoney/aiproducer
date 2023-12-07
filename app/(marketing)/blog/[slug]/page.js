@@ -123,7 +123,7 @@ export default async function Post({ params }) {
       <Image
         className="mx-auto w-100 h-auto md:h-600 md:object-cover md:object-right"
         alt="main image"
-        src={`${URL}${data.attributes.splash.data.attributes.url}`}
+        src={`${data.attributes.splash.data.attributes.url}`}
         width="1400"
         height="1400"
       />
@@ -144,7 +144,7 @@ export default async function Post({ params }) {
           <div className="mt-8 md:flex md:items-center">
             <Image
               className="mt-6 h-16 w-16 rounded-full"
-              src={`${URL}${data.attributes.author_image.data.attributes.url}`}
+              src={`${data.attributes.author_image.data.attributes.url}`}
               width={70}
               height={70}
               alt={`${data.attributes.author_name} image`}
