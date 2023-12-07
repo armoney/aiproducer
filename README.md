@@ -2,15 +2,19 @@
 
 **IDEA**: Bootstrap a video resume business.
 
-**HAS**: landing page, questionnaire form, stripe embedded checkout, Checkout success with Calendly widget
+**HAS**: landing page, /questionnaire form, Stripe embedded checkout, blog, email contact form, checkout success with Calendly widget
 
 *Strech goals*: authentication and dashboard with job profile, video hosting for viewing finished product
 
 **TECHNOLOGIES**: 
 
-* *Frontend*: Javascript/React, NextJS, TailwindCSS, react-hook-form, react-select, CLSX
+* *Frontend*: Javascript/React, NextJS, TailwindCSS, HeadlessUI, react-hook-form, react-select, CLSX, GraphQl
 
 * *Backend*: NodeJS, Vercel host, PostgreSQL, Prisma ORM, Zod schema validation, Stripe
+
+* *Internal Tools*: Strapi Headless CMS with S3 bucket on Heroku
+
+* *Thirdparty SW*: Fullstory, Google Tag Manager
 
 ## Environments
 
