@@ -14,6 +14,7 @@ import Remote_person_md from "../public/SeeV_LandingPage_9-min.jpeg";
 import Paul from "../public/paul.jpeg";
 import Armon from "../public/armon.jpeg";
 import Hakim from "../public/hakim.jpeg";
+import Mark from "../public/mark.jpeg";
 import "./page.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -121,6 +122,19 @@ export default function Page() {
           </p>
         </div>
         <Slider {...sliderSettings}>
+          <div>
+            <Testimonial
+              imgSrc={Mark}
+              quote={`Having the opportunity to connect face-to-face immediately with potential
+                  employers is an invaluable asset and a necessary tool to help me
+                  stand out in today's ever-changing job market. The See-V team took
+                  great care to make sure the process was easy and fun. Better yet, it
+                  was like having a career coach with me who was able to help me bring
+                  out the best of what I do in a clear, concise, and engaging way.`}
+              title={`Senior Creative Producer`}
+              name={`Mark Cramer`}
+            />
+          </div>
           <div>
             <Testimonial
               imgSrc={Hakim}

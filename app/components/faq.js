@@ -68,6 +68,18 @@ export default function Example() {
     sleeves to do it all themselves. We, however, thrive on that stuff! That's why SeeV stands out as the go-to destination
     for crafting stellar, tailor-made video resumes.`,
     },
+    {
+      id: 9,
+      q: `But I'm not good on camera...`,
+      a: `Counter argument: What if you actually are good on camera and just don't
+      know it yet? For many people (maybe most), speaking to camera can
+      feel a bit... awkward. That's perfectly normal! That's why SeeV.work
+      employs supportive, expert Hollywood producers to coach you through
+      every step of your remote interview to make you feel at ease and
+      look and sound your best. Trust us, when you have an enthusiastic
+      advocate on your side, recording video isn't just do-able, it's an
+      experience you might actually come to enjoy!`,
+    },
   ];
 
   const disclosures = faqs.map((faq) => {
