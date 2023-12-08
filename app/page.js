@@ -125,7 +125,7 @@ export default function Page() {
           <div>
             <Testimonial
               imgSrc={Mark}
-              quote={`Having the opportunity to connect face-to-face immediately with potential
+              quote={`Having the opportunity to connect immediately with potential
                   employers is an invaluable asset and a necessary tool to help me
                   stand out in today's ever-changing job market. The See-V team took
                   great care to make sure the process was easy and fun. Better yet, it
