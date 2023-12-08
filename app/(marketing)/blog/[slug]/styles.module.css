@@ -1,7 +1,7 @@
 .reactMarkdown {
   font-family: "__Inter_e66fe9", "__Inter_Fallback_e66fe9";
   font-style: normal;
-  color: rgb(17 24 39);
+  @apply text-gray-900;
 }
 .reactMarkdown p {
   font-size: 1.125rem;
@@ -11,6 +11,11 @@
 }
 .reactMarkdown p img {
   margin: 2rem auto;
+}
+@media screen(md) {
+  .reactMarkdown p img {
+    max-width: 75%;
+  }
 }
 .reactMarkdown h2 {
   font-size: 2rem;
