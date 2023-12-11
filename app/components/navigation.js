@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import SeeV_logo from "../../public/logo/SeeV_Logo_Horizontal_Blue.png";
+import SeeV_logo from "../../public/logo/seev_logo_gradient_med.png";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { Dialog } from "@headlessui/react";
