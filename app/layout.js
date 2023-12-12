@@ -30,7 +30,6 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
           <Analytics />
-          <Footer />
         </body>
         <Script id="google-tag-manager-2">
           <noscript>
