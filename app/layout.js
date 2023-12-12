@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
       <StrictMode>
         <body className={inter.className}>
           {children}
+          <Footer />
           <Analytics />
           <Footer />
         </body>
