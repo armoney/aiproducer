@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import { StrictMode } from "react";
+import Footer from "../app/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         <body className={inter.className}>
           {children}
           <Analytics />
+          <Footer />
         </body>
         <Script id="google-tag-manager-2">
           <noscript>

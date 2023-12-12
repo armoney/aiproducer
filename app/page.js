@@ -189,7 +189,7 @@ export default function Page() {
 
       <Examples />
       <Pricing />
-      <div className="">
+      {/* <div className="">
         <Image
           className="hidden lg:block"
           src={Remote_person_lg}
@@ -200,7 +200,7 @@ export default function Page() {
           src={Remote_person_md}
           alt={"person working remote at coffee shop"}
         />
-      </div>
+      </div> */}
     </div>
   );
 }
