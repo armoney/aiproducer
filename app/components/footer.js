@@ -19,10 +19,10 @@ export default function Footer() {
           <Link href="/faq">FAQ</Link>
         </div>
         <div className="flex flex-row gap-8 text-gray-50 items-center">
-          <a href="https://www.facebook.com/SeeVVideoResumes">
+          <a target="_blank" href="https://www.facebook.com/SeeVVideoResumes">
             <Image src={facebook} width={32} height={32} alt="facebook"></Image>
           </a>
-          <a href="https://www.instagram.com/seev_josh/">
+          <a target="_blank" href="https://www.instagram.com/seev_josh/">
             <Image
               src={instagram}
               width={32}
@@ -31,15 +31,15 @@ export default function Footer() {
             ></Image>
           </a>
 
-          <a href="https://www.youtube.com/@SeeV_Josh">
+          <a target="_blank" href="https://www.youtube.com/@SeeV_Josh">
             <Image src={youtube} width={32} height={32} alt="youtube"></Image>
           </a>
 
-          <a href="https://twitter.com/SeeV_Josh">
+          <a target="_blank" href="https://twitter.com/SeeV_Josh">
             <Image src={xcorp} width={32} height={32} alt="xcorp"></Image>
           </a>
 
-          <a href="https://www.tiktok.com/@seev_josh">
+          <a target="_blank" href="https://www.tiktok.com/@seev_josh">
             <Image src={tiktok} width={32} height={32} alt="tiktok"></Image>
           </a>
         </div>
