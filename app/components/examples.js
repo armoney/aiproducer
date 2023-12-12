@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PaulImg from "../../public/paul.jpeg";
 import ArmonImg from "../../public/armon.jpeg";
-import JoshImg from "../../public/josh.jpeg";
+import MarkImg from "../../public/mark.jpeg";
 import HakimImg from "../../public/hakim.jpeg";
 import Image from "next/image";
 import clsx from "clsx";
@@ -9,10 +9,10 @@ import clsx from "clsx";
 export default function Examples() {
   const clients = [
     {
-      name: "Josh Murphy",
-      title: "Executive Producer",
-      img: JoshImg,
-      videoSrc: `https://player.vimeo.com/video/828795162`,
+      name: "Mark Cramer",
+      title: "Senior Creative Producer",
+      img: MarkImg,
+      videoSrc: `https://player.vimeo.com/video/893428367`,
       id: 0,
     },
     {

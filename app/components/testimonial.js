@@ -39,7 +39,7 @@ const Testimonial = ({ imgSrc, videoSrc, quote, name, title }) => {
             <div className="flex items-center justify-center">
               {" "}
               <Image
-                className="h-10 w-10 rounded-full"
+                className="h-12 w-12 rounded-full md:h-16 md:w-16"
                 src={imgSrc}
                 alt={`${name} profile picture`}
               />
