@@ -15,6 +15,7 @@ import Paul from "../public/paul.jpeg";
 import Armon from "../public/armon.jpeg";
 import Hakim from "../public/hakim.jpeg";
 import Mark from "../public/mark.jpeg";
+import Ketaki from "../public/ketaki.jpeg";
 import "./page.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -122,6 +123,16 @@ export default function Page() {
           </p>
         </div>
         <Slider {...sliderSettings}>
+          <div>
+            <Testimonial
+              imgSrc={Ketaki}
+              quote={`I LOVE IT!!! I feel like you've captured 'me' in 90 seconds in a way no
+              resume can - going to start using this for all my outreach now.
+              Thank you so much for working with me on this.`}
+              title={`Customer Success & Account Management`}
+              name={`K.M.`}
+            />
+          </div>
           <div>
             <Testimonial
               imgSrc={Mark}
