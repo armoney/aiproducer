@@ -92,7 +92,12 @@ export default async function Post({ params }) {
 
   const PostBody = function () {
     return (
-      <ReactMarkdown className={styles.reactMarkdown}>
+      <ReactMarkdown
+        components={{
+          img: ({ src, alt }) => <img src={src} alt={alt} loading="lazy"></img>,
+        }}
+        className={styles.reactMarkdown}
+      >
         {data.attributes.blogbody}
       </ReactMarkdown>
     );
@@ -126,6 +131,7 @@ export default async function Post({ params }) {
         src={`${data.attributes.splash.data.attributes.url}`}
         width="1400"
         height="1400"
+        loading="eager"
       />
       <div className="px-4 max-w-screen-xl mx-auto md:px-6 xl:px-2">
         <article>
