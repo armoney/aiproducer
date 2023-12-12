@@ -28,8 +28,8 @@ export default function RootLayout({ children }) {
       <StrictMode>
         <body className={inter.className}>
           {children}
-          <Analytics />
           <Footer />
+          <Analytics />
         </body>
         <Script id="google-tag-manager-2">
           <noscript>
