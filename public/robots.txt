@@ -1,14 +1,8 @@
-//robots.txt
-
-# Block all crawlers for /api
 User-agent: *
-Disallow: /api
+Disallow: /api/
 
-# Block all crawlers for /producer
 User-agent: *
-Disallow: /producer
+Disallow: /producer/
 
-
-# Allow all crawlers
 User-agent: *
 Allow: /
