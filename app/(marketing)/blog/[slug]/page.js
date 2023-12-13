@@ -138,9 +138,9 @@ export default async function Post({ params }) {
           <p className="mt-4 text-md leading-6 text-gray-600">
             {data.attributes.minutes} min read
           </p>
-          <h1 className="leading-tight mt-6 text-5xl font-semibold text-gray-900 sm:text-6xl lg:text-7xl lg:col-start-1 lg:col-span-7">
+          <title className="leading-tight mt-6 text-5xl font-semibold text-gray-900 sm:text-6xl lg:text-7xl lg:col-start-1 lg:col-span-7">
             {data.attributes.title}
-          </h1>
+          </title>
           <div className="mt-8 h-px w-100 bg-slate-300"></div>
           <div className="mt-12">
             <PostBody />
