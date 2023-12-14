@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Slider from "react-slick";
 import Modal from "./components/modal";
 import ContactForm from "./components/contactForm";
@@ -9,8 +8,6 @@ import Process from "./components/process";
 import Examples from "./components/examples";
 import Testimonial from "./components/testimonial";
 import Pricing from "./components/pricing";
-import Remote_person_lg from "../public/SeeV_LandingPage_8-min.png";
-import Remote_person_md from "../public/SeeV_LandingPage_9-min.jpeg";
 import Paul from "../public/paul.jpeg";
 import Armon from "../public/armon.jpeg";
 import Hakim from "../public/hakim.jpeg";
@@ -19,7 +16,7 @@ import Ketaki from "../public/ketaki.jpeg";
 import "./page.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FullStory, init as initFullStory } from "@fullstory/browser";
+import { init as initFullStory } from "@fullstory/browser";
 
 export default function Page() {
   const [openModal, setOpenModal] = useState(false);
