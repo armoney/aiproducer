@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Navigation from "../../../components/navigation";
 import ReactMarkdown from "react-markdown";
 import styles from "./styles.module.css";
@@ -55,6 +54,7 @@ async function getPostData(slug) {
                 }
               }
               minutes
+              description
               author_name
               author_title
               blogbody
@@ -83,6 +83,24 @@ async function getPostData(slug) {
   const res = await fetch(`${URL}/graphql`, fetchParams);
   const { data } = await res.json();
   return data;
+}
+
+export async function generateMetadata({ params, searchParams }, parent) {
+  const { slug } = params;
+  const postData = await getPostData(slug);
+  const data = postData.blogposts.data[0];
+
+  let tagsArr = [];
+  data.attributes.tags.data.forEach((tag) => {
+    tagsArr.push(tag.attributes.name);
+  });
+
+  const tagsString = tagsArr.join(" | ");
+
+  return {
+    title: data.attributes.title,
+    description: `${data?.attributes?.description} - ${tagsString}`,
+  };
 }
 
 export default async function Post({ params }) {
@@ -124,6 +142,10 @@ export default async function Post({ params }) {
 
   return (
     <div className="mt-28 pb-12">
+      {/* <Head>
+        <title>{data.attributes.title}</title>
+        <meta name="description" content={getContentDesc()} key="desc" />
+      </Head> */}
       <Navigation />
       <Image
         className="mx-auto w-100 h-auto md:h-600 md:object-cover md:object-right"
