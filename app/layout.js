@@ -4,11 +4,13 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import { StrictMode } from "react";
 import Footer from "../app/components/footer";
+import FullStory from "./components/fullstory";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "SeeV Video Resumes",
-  description: "Video resumes",
+  description:
+    "Make a video resume with professional Hollywood directors and editors",
 };
 
 export default function RootLayout({ children }) {
@@ -21,7 +23,7 @@ export default function RootLayout({ children }) {
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-N49WGS9W');
+          })(window,document,'script','dataLayer','G-TFX64DB41B');
         `}
       </Script>
 
@@ -31,10 +33,11 @@ export default function RootLayout({ children }) {
           <Footer />
           <Analytics />
         </body>
+        <FullStory />
         <Script id="google-tag-manager-2">
           <noscript>
             <iframe
-              src="https://www.googletagmanager.com/ns.html?id=GTM-N49WGS9W"
+              src="https://www.googletagmanager.com/ns.html?id=G-TFX64DB41B"
               height="0"
               width="0"
               style="display:none;visibility:hidden"
