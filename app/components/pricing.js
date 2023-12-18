@@ -27,6 +27,31 @@ export default function Pricing() {
     "Custom narrative",
   ];
 
+  const FistTenSaleDateFormatted = new Date("01/05/2024").toLocaleDateString(
+    "en-us",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }
+  );
+
+  const SaleWidget = ({ oldPrice, discount }) => {
+    return (
+      <div className="mt-2 text-sm">
+        <p>
+          <span className="bg-red-600 text-white p-1">Save ${discount}</span>{" "}
+          <span>Was ${oldPrice}</span>
+        </p>
+        <div className="mt-2 text-sm">
+          <p className="text-xs font-light italic text-gray-500">
+            Deal ends {FistTenSaleDateFormatted}, midnight PST*
+          </p>
+        </div>
+      </div>
+    );
+  };
+
   const CardListItem = ({ feature }) => {
     return (
       <li className="flex mt-4">
@@ -81,6 +106,7 @@ export default function Pricing() {
               <p className="flex mt-4 items-baseline gap-x-2">
                 <span className="text-5xl	font-bold	tracking-tight">$99</span>
               </p>
+              <SaleWidget oldPrice={299} discount={200} />
               <p className="mt-4 text-base leading-7 font-light text-gray-500">
                 {`Perfect for showing your personality and communication skills.`}
               </p>
@@ -109,13 +135,14 @@ export default function Pricing() {
               <p className="flex mt-4 items-baseline gap-x-2">
                 <span className="text-5xl	font-bold	tracking-tight">$299</span>
               </p>
+              <SaleWidget oldPrice={799} discount={400} />
               <p className="mt-4 text-base leading-7 font-light text-gray-500">
                 {`Perfect for showing your personality and professional work.`}
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
                 <Link
                   prefetch={true}
-                  href="/producer/checkout?name=Combination&price=29900"
+                  href="/producer/checkout?name=Combination&price=39900"
                   className="rounded-md bg-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                 >
                   Get started today
@@ -132,10 +159,10 @@ export default function Pricing() {
               <p className="flex mt-4 items-baseline gap-x-2">
                 <span className="text-5xl	font-bold	tracking-tight"></span>
               </p>
-              <p className="text-base leading-7 font-light text-gray-500">
-                {`Have more custom needs for your video resume's visuals or narrative structure? Interested in having us come out with a full crew? Lets set a time to discuss today!`}
+              <p className="text-base pt-4 pb-2 leading-7 font-light text-gray-500">
+                {`Have more custom needs for your video resume's visuals or narrative structure? Want to film on location or interested in having us come out with a full crew? Lets set a time to discuss today!`}
               </p>
-              <div className="mt-6 flex items-center justify-center gap-x-6 xl:justify-start">
+              <div className="mt-12 flex items-center justify-center gap-x-6 xl:justify-start">
                 <button
                   onClick={() => setOpenModal(true)}
                   className="rounded-md ring-1 ring-primary-200 text-primary-500 w-full px-3.5 py-2.5 text-center text-sm font-semibold hover:ring-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
