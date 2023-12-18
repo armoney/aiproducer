@@ -97,11 +97,18 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
   const tagsString = tagsArr.join(" | ");
 
+  const isoDate = new Date(data.attributes.date_published).toISOString();
+
   return {
     title: data.attributes.title,
     description: `${data?.attributes?.description} - ${tagsString}`,
+    authors: [{ name: data.attributes.author_name }],
     openGraph: {
       images: [data.attributes.splash.data.attributes.url],
+      title: data.attributes.title,
+      description: `${data?.attributes?.description} - ${tagsString}`,
+      authors: `${data.attributes.author_name}`,
+      publishedTime: isoDate,
     },
   };
 }
