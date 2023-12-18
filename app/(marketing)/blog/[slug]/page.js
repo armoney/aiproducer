@@ -100,6 +100,9 @@ export async function generateMetadata({ params, searchParams }, parent) {
   return {
     title: data.attributes.title,
     description: `${data?.attributes?.description} - ${tagsString}`,
+    openGraph: {
+      images: [data.attributes.splash.data.attributes.url],
+    },
   };
 }
 
