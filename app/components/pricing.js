@@ -27,7 +27,7 @@ export default function Pricing() {
     "Custom narrative",
   ];
 
-  const FistTenSaleDateFormatted = new Date("01/05/2024").toLocaleDateString(
+  const FistTenSaleDateFormatted = new Date("01/31/2024").toLocaleDateString(
     "en-us",
     {
       year: "numeric",
