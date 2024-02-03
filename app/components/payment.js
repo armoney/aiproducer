@@ -27,7 +27,6 @@ const Payment = memo(function Payment() {
   }, [jpid]);
 
   const options = { clientSecret };
-  console.log(clientSecret);
 
   return (
     <>

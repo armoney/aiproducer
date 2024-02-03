@@ -7,7 +7,7 @@ import Navigation from "./components/navigation";
 import Process from "./components/process";
 import Examples from "./components/examples";
 import Testimonial from "./components/testimonial";
-import Pricing from "./components/pricing";
+import MainContact from "./components/mainContact";
 import Paul from "../public/paul.jpeg";
 import Armon from "../public/armon.jpeg";
 import Hakim from "../public/hakim.jpeg";
@@ -64,17 +64,11 @@ export default function Page() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 xl:justify-start">
               <a
-                href="/#pricing"
-                className="rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
-              >
-                Get started
-              </a>
-              <a
                 href="#"
-                className="text-sm font-semibold leading-6 text-gray-900"
+                className="rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                 onClick={() => setOpenModal(true)}
               >
-                Free Consultation <span aria-hidden="true">→</span>
+                Free Consultation
               </a>
               <Modal isOpen={openModal} closeIt={() => setOpenModal(false)}>
                 <div id="contact-form">
@@ -185,7 +179,7 @@ export default function Page() {
       </div>
 
       <Examples />
-      <Pricing />
+      <MainContact />
       {/* <div className="">
         <Image
           className="hidden lg:block"
